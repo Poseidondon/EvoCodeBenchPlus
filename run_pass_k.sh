@@ -1,4 +1,4 @@
-ROOT=/home/user/EvoCodeBench
+ROOT=/home/k1shin/EvoCodeBench
 
 Source_Code_Root=$ROOT/Source_Code
 Dependency_Root=$ROOT/Dependency_Data

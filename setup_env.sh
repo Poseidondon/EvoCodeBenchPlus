@@ -1,4 +1,4 @@
-Root=/home/user/EvoCodeBench
+Root=/home/k1shin/EvoCodeBench
 Data_Path=$Root/data.jsonl
 Source_Code_Root=$Root/Source_Code
 
@@ -222,3 +222,4 @@ cd $Root
 python update_test_path.py \ 
     --data_path $Data_Path \
     --source_code_root $Source_Code_Root
+pip install --upgrade pip
