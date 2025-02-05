@@ -106,7 +106,7 @@ ROOT=/home/user/EvoCodeBench
 # recover the repositories
 python check_source_code.py $ROOT/Source_Code \
 
-python pass_k.py \
+python run_tests.py \
     --output_file /path/to/completion.jsonl \
     --log_file /path/to/store/execution_results.jsonl \
     --source_code_root $ROOT/Source_Code \

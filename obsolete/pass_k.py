@@ -33,31 +33,32 @@ def adjust_indent(code, new_indent):
 @func_set_timeout(20)
 def execution_tests(test, project_path):
     command = "source myenv/bin/activate && pytest " + test
-    process = subprocess.Popen(['bash', '-c', command], cwd=project_path, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(['bash', '-c', command], cwd=project_path, stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
     try:
         while True:
             process_id = process.pid
             process_memory = psutil.Process(process_id).memory_info().rss
-            if process_memory > 5 * 1024 * 1024 * 1024: # 5GB memory usage per test
+            if process_memory > 5 * 1024 * 1024 * 1024:  # 5GB memory usage per test
                 process.terminate()
                 process.wait()
-                return False # Out of Memory
+                return False  # Out of Memory
             return_code = process.poll()
             if return_code is not None:
                 if return_code != 0:
                     process.terminate()
                     process.wait()
-                    return False # Execution Error
+                    return False  # Execution Error
                 else:
                     break
     except Exception as e:
         process.terminate()
         process.wait()
-        return False # Other Error
+        return False  # Other Error
     finally:
         process.terminate()
         process.wait()
-    return True # Pass
+    return True  # Pass
 
 
 def compute_pass_at_k(n, c, k):
@@ -69,7 +70,7 @@ def compute_pass_at_k(n, c, k):
     if n - c < k:
         return 1
     else:
-        return 1.0 - np.prod(1.0 - k / np.arange(n-c+1, n+1))
+        return 1.0 - np.prod(1.0 - k / np.arange(n - c + 1, n + 1))
 
 
 def SetUp_evaluation(args, data, completion):
@@ -81,7 +82,7 @@ def SetUp_evaluation(args, data, completion):
     run(['cp', completion_path, completion_tmp_path])
 
     # write the new completion file
-    sos, eos = data['body_position'][0]-1, data['body_position'][1]
+    sos, eos = data['body_position'][0] - 1, data['body_position'][1]
     with open(completion_path, 'r') as f:
         file_lines = f.readlines()
     file_lines = file_lines[:sos] + ['\n', completion, '\n'] + file_lines[eos:]
@@ -101,7 +102,7 @@ def check_correctness(args, data):
     if completion == "    pass\n":
         return 'Fail'
     completion = adjust_indent(completion, data['indent'])
-    
+
     SetUp_evaluation(args, data, completion)
     project_name = data['completion_path'].split('/')[0]
     project_path = os.path.join(args.source_code_root, project_name)
@@ -118,10 +119,11 @@ def check_correctness(args, data):
     TearDown_evaluation(args, data)
     return flag
 
+
 def report_results(args, benchmark_data):
     if not os.path.exists(args.log_file):
         raise ValueError(f'{args.log_file} does not exist')
-    
+
     # Collect passed completions for each namespace
     passed_completion = {}
     with open(args.log_file, 'r') as f:
@@ -132,7 +134,6 @@ def report_results(args, benchmark_data):
                 if namespace not in passed_completion:
                     passed_completion[namespace] = set()
                 passed_completion[namespace].add(completion)
-
 
     # Iterate through all completions and count the number of passed completions for each namespace
     results = {}
@@ -145,14 +146,14 @@ def report_results(args, benchmark_data):
                     results[namespace] = 0
                 if namespace in passed_completion and completion in passed_completion[namespace]:
                     results[namespace] += 1
-            
+
     # Compute Pass@k
     k_list = [int(k) for k in args.k.split(',')]
     for k in k_list:
         if k > args.n:
             continue
         pass_at_k = np.mean([compute_pass_at_k(args.n, pass_num, k) for namespace, pass_num in results.items()])
-        print(f'pass_at_{k}: {pass_at_k*100}%')
+        print(f'pass_at_{k}: {pass_at_k * 100}%')
 
 
 def load_finished_data(args):
@@ -182,12 +183,12 @@ def main():
                 todo_output_data.append(js)
                 finished_data[namespace] = set()
                 finished_data[namespace].add(completion)
-            elif completion not in finished_data[namespace]: 
+            elif completion not in finished_data[namespace]:
                 todo_output_data.append(js)
-                finished_data[namespace].add(completion)         
+                finished_data[namespace].add(completion)
     del finished_data
     print("TODO Completions: ", len(todo_output_data))
-    
+
     # load benchmark data
     benchmark_data = {}
     with open(args.data_file, 'r') as f:
@@ -209,6 +210,7 @@ def main():
                 f.flush()
 
     report_results(args, benchmark_data)
+
 
 if __name__ == '__main__':
     main()
