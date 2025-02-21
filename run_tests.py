@@ -5,14 +5,14 @@ import numpy as np
 import func_timeout
 import textwrap
 import argparse
-
+import shutil
 from pprint import pprint
-from typing import Mapping, Dict, Any
+from typing import Mapping, Dict, Any, List
 from subprocess import run
 from tqdm import tqdm
 from func_timeout import func_set_timeout
 
-from utils import load_namespace2data
+from utils import load_tasks, load_completions, restore_script_backups
 
 # TODO: fix functions
 # TODO: parallelism
@@ -159,6 +159,43 @@ def check_correctness(args, data):
     return flag
 
 
+def run_tests_for_gen(
+        gen: Dict[str, Any],
+):
+    pass
+
+
+def run_gens_for_task(
+        repos_dir: str | os.PathLike,
+        task: Dict[str, Any],
+        gens: List[Dict[str, Any]],
+):
+    script_path = os.path.join(repos_dir, task['completion_path'])
+    backup_path = os.path.join('.backups', task['completion_path'])
+    backup_dir = os.path.dirname(backup_path)
+    os.makedirs(backup_dir, exist_ok=True)
+    shutil.copy(script_path, backup_path)
+
+    for gen in gens:
+        # insert completion into script
+        completion = adjust_indent(gen['completion'], task['indent'])
+        sos, eos = task['body_position'][0] - 1, task['body_position'][1]
+        with open(backup_path, 'r') as f:
+            file_lines = f.readlines()
+        file_lines = file_lines[:sos] + ['\n', completion, '\n'] + file_lines[eos:]
+        with open(script_path, 'w') as f:
+            f.write(''.join(file_lines))
+        
+        # run tests
+        pass
+
+        # restore script
+        shutil.copy(backup_path, script_path)
+        # clean up
+        os.remove(backup_path)
+    pass
+
+
 def run_tests(
         tasks: Mapping[str, Dict[str, Any]],
         completions: Mapping[str, Dict[str, Any]],
@@ -175,33 +212,30 @@ def run_tests(
     # TODO: read intermediate results
     results = {}
 
+    # restore backups if .backups exists
+    if os.path.exists('.backups'):
+        restore_script_backups(tasks, repos_dir)
+
     try:
-        p_bar = tqdm(tasks.items(), total=len(tasks), desc='Testing repositories', disable=not pbar)
+        p_bar = tqdm(tasks, total=len(tasks), desc='Testing repositories', disable=not pbar)
         p_bar.set_postfix({
             'tests_pass': 0,
             'tests_error': 0,
             'repos_pass': 0,
             'repos_error': 0,
         })
-        for namespace, task in p_bar:
-            pass
+        for task in p_bar:
+            gens = completions[task['namespace']]
+            task_results = run_gens_for_task(repos_dir, task, gens)
+            print(task_results)
     except KeyboardInterrupt as e:
+        print('KeyboardInterrupt detected!')
+
+        print('Restoring script backups...')
+        restore_script_backups(tasks, repos_dir)
+
+        # TODO: save intermediate results
         pass
-
-    # iterate through the output data
-    # with open(args.log_file, 'a') as f:
-    #     for output in tqdm(todo_output_data):
-    #         namespace = output['namespace']
-    #         if namespace in namespace2task:
-    #             data = namespace2task[namespace]
-    #             data['completion'] = output['completion']
-    #             result = check_correctness(args, data)
-    #             output['Result'] = result
-    #             f.write(json.dumps(output) + '\n')
-    #             f.flush()
-    #
-    # report_results(args, namespace2task)
-
 
 if __name__ == '__main__':
     args = parse_args()
@@ -211,12 +245,12 @@ if __name__ == '__main__':
 
     # load tasks
     print(f'Loading tasks from {args.tasks}...')
-    tasks = load_namespace2data(args.tasks)
+    tasks = load_tasks(args.tasks)
     print(f'Loaded {len(tasks)} tasks.')
 
     # load completions
     print(f'Loading completions from {args.completions}...')
-    completions = load_namespace2data(args.completions)
+    completions = load_completions(args.completions)
     print(f'Loaded {len(completions)} completions.')
 
     # run tasks

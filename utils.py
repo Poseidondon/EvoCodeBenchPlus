@@ -1,7 +1,9 @@
 import os, json
 import textwrap
+import shutil
 
-from typing import Mapping, Dict, Any
+from typing import Dict, Any, List
+from collections import defaultdict
 
 
 def load_json_data(input_file: str):
@@ -30,15 +32,29 @@ def adjust_indent(code, new_indent):
     return indented_code
 
 
-def load_namespace2data(path: str | os.PathLike) -> Mapping[str, Dict[str, Any]]:
-    namespace2data = {}
+def load_tasks(path: str | os.PathLike) -> List[Dict[str, Any]]:
+    tasks = []
     with open(path, 'r') as f:
         for line in f:
             js = json.loads(line)
-            namespace = js['namespace']
-            if namespace not in namespace2data:
-                namespace2data[namespace] = js
-            else:
-                print('WARNING: dropping duplicate namespace!', namespace)
+            tasks.append(js)
+    
+    return tasks
 
-    return namespace2data
+
+def load_completions(path: str | os.PathLike) -> Dict[str, List[Dict[str, Any]]]:
+    completions = defaultdict(list)
+    with open(path, 'r') as f:
+        for line in f:
+            js = json.loads(line)
+            completions[js['namespace']].append(js)
+    
+    return completions
+
+
+def restore_script_backups(tasks: List[Dict[str, Any]], repos_dir: str | os.PathLike):
+    for task in tasks:
+        backup_path = os.path.join('.backups', task['completion_path'])
+        if os.path.exists(backup_path):
+            shutil.copy(backup_path, os.path.join(repos_dir, task['completion_path']))
+            os.remove(backup_path)
