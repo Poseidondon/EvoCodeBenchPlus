@@ -7,8 +7,8 @@ from pathlib import Path
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument('--data_path', default='data/data.jsonl', help='Path to the data.jsonl file')
-    parser.add_argument('--source_code_root', default='Source_Code', help='Path to the source code directory')
+    parser.add_argument('--data_path', default='dataset/data/data.jsonl', help='Path to the data.jsonl file')
+    parser.add_argument('--source_code_root', default='dataset/repos', help='Path to the source code directory')
     parser.add_argument('--output_file', required=True, type=str, help='Path to the completion file (output file)')
     return parser.parse_args()
 

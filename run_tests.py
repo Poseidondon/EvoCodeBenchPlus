@@ -1,4 +1,3 @@
-import json
 import subprocess
 import psutil
 import os
@@ -19,7 +18,6 @@ from utils import load_namespace2data
 # TODO: parallelism
 # TODO: save progress on exit
 # TODO: test on oracle and nemesis
-# TODO: refactor myenv different file for each setup
 
 
 def parse_args():
@@ -28,13 +26,13 @@ def parse_args():
     parser.add_argument(
         '--tasks',
         type=str,
-        default='data/data.jsonl',
+        default='dataset/data/data.jsonl',
         help='Path to a file with tasks',
     )
     parser.add_argument(
         '--repos',
         type=str,
-        default='Source_Code',
+        default='dataset/repos',
         help='Path to a directory with all repositories',
     )
     parser.add_argument(
