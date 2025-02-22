@@ -10,9 +10,10 @@ from pprint import pprint
 from typing import Mapping, Dict, Any, List
 from subprocess import run
 from tqdm import tqdm
-from func_timeout import func_set_timeout
+from func_timeout import func_set_timeout, FunctionTimedOut
 
-from utils import load_tasks, load_completions, restore_script_backups
+from utils import load_tasks, load_completions, restore_script_backups, adjust_indent
+from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException
 
 # TODO: fix functions
 # TODO: parallelism
@@ -32,8 +33,12 @@ def parse_args():
     parser.add_argument(
         '--repos',
         type=str,
-        default='dataset/repos',
-        help='Path to a directory with all repositories',
+        help='Path to a directory with all repositories. Must be an absolute path.',
+    )
+    parser.add_argument(
+        '--venvs',
+        type=str,
+        help='Path to a directory with all venvs. Must be an absolute path.',
     )
     parser.add_argument(
         '--completions',
@@ -60,122 +65,93 @@ def parse_args():
     return parser.parse_args()
 
 
-def adjust_indent(code, new_indent):
-    # remove original indentation
-    dedented_code = textwrap.dedent(code)
-    # add new indentation
-    indented_code = textwrap.indent(dedented_code, ' ' * new_indent)
-    return indented_code
-
-
-@func_set_timeout(20)
-def execution_tests(test, project_path):
-    command = "source myenv/bin/activate && pytest " + test
-    env = os.environ.copy()
-    env['PATH'] = f"/home/k1shin/EvoCodeBench/{project_path}:{env['PATH']}"
-    env['PYTHONPATH'] = f"{project_path}:{env.get('PYTHONPATH', '')}"
-    print(f"/home/k1shin/EvoCodeBench/{project_path}:{env['PATH']}")
-    process = subprocess.Popen(['bash', '-c', command], cwd=project_path, stdout=subprocess.PIPE,
-                               stderr=subprocess.PIPE, env=env)
+@func_set_timeout(30)
+def run_test(repo_path: str | os.PathLike, venv_path: str | os.PathLike, test: str | os.PathLike):
+    cmd = f'source {venv_path}/bin/activate && pytest {test}'
+    process = subprocess.Popen(
+        ['bash', '-c', cmd],
+        cwd=repo_path,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        env={
+            **os.environ,
+            'PYTHONPATH': f'{repo_path}:{os.environ.get("PYTHONPATH", "")}'
+        },
+    )
     try:
         while True:
-            process_id = process.pid
-            process_memory = psutil.Process(process_id).memory_info().rss
-            if process_memory > 5 * 1024 * 1024 * 1024:  # 5GB memory usage per test
-                print('OOM')
+            pid = process.pid
+
+            # handle memory usage
+            process_memory = psutil.Process(pid).memory_info().rss
+            if process_memory > 4 * 1024 * 1024 * 1024:
                 process.terminate()
                 process.wait()
-                return False  # Out of Memory
+                return OutOfMemoryException()
+            
             return_code = process.poll()
             if return_code is not None:
+                stdout, stderr = process.communicate()
                 if return_code != 0:
-                    stdout, stderr = process.communicate()
-                    print('return_code:', return_code)
-                    print('stdout:', stdout.decode("utf-8"))
-                    print('stderr:', stderr.decode("utf-8"))
                     process.terminate()
                     process.wait()
-                    return False  # Execution Error
+                    error = {
+                        'return_code': return_code,
+                        'stdout': stdout.decode(),
+                        'stderr': stderr.decode(),
+                    }
+                    print(error['stdout'])
+                    return error
                 else:
-                    break
+                    return True
     except Exception as e:
-        stdout, stderr = process.communicate()
-        print('stdout:', stdout.decode("utf-8"))
-        print('stderr:', stderr.decode("utf-8"))
         process.terminate()
         process.wait()
-        return False  # Other Error
-    finally:
-        process.terminate()
-        process.wait()
-    print('good')
-    return True  # Pass
+        return e
 
 
-def SetUp_evaluation(args, data, completion):
-    completion_path = os.path.join(args.source_code_path, data['completion_path'])
-    head_tail = os.path.split(completion_path)
-    completion_tmp_path = os.path.join(head_tail[0], 'tmp_' + head_tail[1])
-
-    # rename the original completion file as tmp_completion
-    run(['cp', completion_path, completion_tmp_path])
-
-    # write the new completion file
-    sos, eos = data['body_position'][0] - 1, data['body_position'][1]
-    with open(completion_path, 'r') as f:
-        file_lines = f.readlines()
-    file_lines = file_lines[:sos] + ['\n', completion, '\n'] + file_lines[eos:]
-    with open(completion_path, 'w') as f:
-        f.write(''.join(file_lines))
-
-
-def TearDown_evaluation(args, data):
-    completion_path = os.path.join(args.source_code_root, data['completion_path'])
-    head_tail = os.path.split(completion_path)
-    completion_tmp_path = os.path.join(head_tail[0], 'tmp_' + head_tail[1])
-    run(['mv', completion_tmp_path, completion_path])
-
-
-def check_correctness(args, data):
-    completion = data['completion']
-    if completion == "    pass\n":
-        return 'Fail'
-    completion = adjust_indent(completion, data['indent'])
-
-    SetUp_evaluation(args, data, completion)
-    project_name = data['completion_path'].split('/')[0]
-    project_path = os.path.join(args.source_code_root, project_name)
-    flag = 'Pass'
-    for test in data['tests']:
-        try:
-            result = execution_tests(test, project_path)
-            if not result:
-                flag = 'Fail'
-                break
-        except func_timeout.exceptions.FunctionTimedOut:
-            flag = 'Fail'
-            break
-    TearDown_evaluation(args, data)
-    return flag
-
-
-def run_tests_for_gen(
-        gen: Dict[str, Any],
+def run_tests_for_repo(
+        repo_path: str | os.PathLike,
+        venv_path: str | os.PathLike,
+        task: Dict[str, Any],
 ):
-    pass
+    # run all tests for current repository version
+    test_results = []
+    for test in task['tests']:
+        try:
+            res = run_test(repo_path, venv_path, test)
+            test_results.append(res)
+        except Exception as e:
+            test_results.append(e)
+    
+    return test_results
 
 
 def run_gens_for_task(
         repos_dir: str | os.PathLike,
+        venvs_dir: str | os.PathLike,
         task: Dict[str, Any],
         gens: List[Dict[str, Any]],
 ):
+    # get repo name and paths
+    repo_name = task['completion_path'].split('/')[0]
+    repo_path = os.path.join(repos_dir, repo_name)
+    venv_path = os.path.join(venvs_dir, repo_name)
+
+    # validate repo and venv
+    if not os.path.exists(repo_path):
+        raise MissingRepoException(repo_path)
+    if not os.path.exists(venv_path):
+        raise MissingVenvException(venv_path)
+
+    # make script backup
     script_path = os.path.join(repos_dir, task['completion_path'])
     backup_path = os.path.join('.backups', task['completion_path'])
     backup_dir = os.path.dirname(backup_path)
     os.makedirs(backup_dir, exist_ok=True)
     shutil.copy(script_path, backup_path)
 
+    results = []
     for gen in gens:
         # insert completion into script
         completion = adjust_indent(gen['completion'], task['indent'])
@@ -187,25 +163,34 @@ def run_gens_for_task(
             f.write(''.join(file_lines))
         
         # run tests
-        pass
+        gen_result = run_tests_for_repo(repo_path, venv_path, task)
+        results.append(gen_result)
 
         # restore script
         shutil.copy(backup_path, script_path)
         # clean up
         os.remove(backup_path)
-    pass
+    
+    return results
 
 
 def run_tests(
         tasks: Mapping[str, Dict[str, Any]],
         completions: Mapping[str, Dict[str, Any]],
         repos_dir: str | os.PathLike,
+        venvs_dir: str | os.PathLike,
         logs_dir: str | os.PathLike,
         results_path: str | os.PathLike,
         restart: bool = False,
         njobs: int = -1,
         pbar: bool = True,
 ):
+    # Validate paths are absolute
+    if not os.path.isabs(repos_dir):
+        raise ValueError(f"repos_dir must be an absolute path, got: {repos_dir}")
+    if not os.path.isabs(venvs_dir):
+        raise ValueError(f"venvs_dir must be an absolute path, got: {venvs_dir}")
+
     # TODO: number of threads
     pass
 
@@ -225,9 +210,15 @@ def run_tests(
             'repos_error': 0,
         })
         for task in p_bar:
-            gens = completions[task['namespace']]
-            task_results = run_gens_for_task(repos_dir, task, gens)
-            print(task_results)
+            # TODO: append results to results dict
+            try:
+                task_results = run_gens_for_task(repos_dir, venvs_dir, task, completions[task['namespace']])
+                print(task_results)
+            except MissingRepoException as e:
+                print('WARNING: Missing repository!', e)
+            except MissingVenvException as e:
+                print('WARNING: Missing venv!', e)
+    
     except KeyboardInterrupt as e:
         print('KeyboardInterrupt detected!')
 
@@ -258,6 +249,7 @@ if __name__ == '__main__':
         tasks,
         completions,
         repos_dir=args.repos,
+        venvs_dir=args.venvs,
         logs_dir=args.logs,
         results_path=args.results,
         restart=args.restart,
