@@ -1,9 +1,51 @@
 import os, json
 import textwrap
 import shutil
+import pytest
 
 from typing import Dict, Any, List
 from collections import defaultdict
+
+
+class TestResultPlugin:
+    def __init__(self):
+        self.results = {
+            "passed": [],
+            "failed": [],
+            "skipped": [],
+            "errors": [],
+        }
+
+    def pytest_runtest_logreport(self, report):
+        """
+        Hook to capture test results.
+        """
+        if report.when == "call":  # Only consider the test execution phase
+            if report.passed:
+                self.results["passed"].append(report.nodeid)
+            elif report.failed:
+                self.results["failed"].append(report.nodeid)
+        elif report.when == "setup" and report.failed:
+            self.results["errors"].append(report.nodeid)
+        elif report.when == "teardown" and report.failed:
+            self.results["errors"].append(report.nodeid)
+        elif report.skipped:
+            self.results["skipped"].append(report.nodeid)
+
+    def get_results(self):
+        """
+        Return the captured results.
+        """
+        return self.results
+
+
+def run_tests(test_path):
+    """
+    Run pytest and capture detailed results.
+    """
+    plugin = TestResultPlugin()
+    pytest.main([test_path], plugins=[plugin])
+    return plugin.get_results()
 
 
 def load_json_data(input_file: str):

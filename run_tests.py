@@ -1,24 +1,22 @@
 import subprocess
 import psutil
 import os
-import numpy as np
-import func_timeout
-import textwrap
 import argparse
 import shutil
+import json
+
 from pprint import pprint
 from typing import Mapping, Dict, Any, List
-from subprocess import run
 from tqdm import tqdm
-from func_timeout import func_set_timeout, FunctionTimedOut
+from func_timeout import func_set_timeout
 
 from utils import load_tasks, load_completions, restore_script_backups, adjust_indent
-from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException
+from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException, TestException
 
-# TODO: fix functions
 # TODO: parallelism
-# TODO: save progress on exit
+# TODO: start from checkpoint and restart
 # TODO: test on oracle and nemesis
+# TODO: parse junitxml
 
 
 def parse_args():
@@ -54,7 +52,7 @@ def parse_args():
     parser.add_argument(
         '--logs',
         type=str,
-        help='Path to a directory to store stdout and stderr for each repo',
+        help='Path to a directory to store pytest logs for each repo',
     )
     # configuration
     parser.add_argument(
@@ -66,8 +64,13 @@ def parse_args():
 
 
 @func_set_timeout(30)
-def run_test(repo_path: str | os.PathLike, venv_path: str | os.PathLike, test: str | os.PathLike):
-    cmd = f'source {venv_path}/bin/activate && pytest {test}'
+def run_test(
+        repo_path: str | os.PathLike,
+        venv_path: str | os.PathLike,
+        logs_path: str | os.PathLike,
+        test: str | os.PathLike,
+):
+    cmd = f'source {venv_path}/bin/activate && pytest {test} --junitxml={logs_path}'
     process = subprocess.Popen(
         ['bash', '-c', cmd],
         cwd=repo_path,
@@ -84,7 +87,7 @@ def run_test(repo_path: str | os.PathLike, venv_path: str | os.PathLike, test: s
 
             # handle memory usage
             process_memory = psutil.Process(pid).memory_info().rss
-            if process_memory > 4 * 1024 * 1024 * 1024:
+            if process_memory > 8 * 1024 * 1024 * 1024:
                 process.terminate()
                 process.wait()
                 return OutOfMemoryException()
@@ -92,18 +95,15 @@ def run_test(repo_path: str | os.PathLike, venv_path: str | os.PathLike, test: s
             return_code = process.poll()
             if return_code is not None:
                 stdout, stderr = process.communicate()
-                if return_code != 0:
-                    process.terminate()
-                    process.wait()
-                    error = {
-                        'return_code': return_code,
-                        'stdout': stdout.decode(),
-                        'stderr': stderr.decode(),
-                    }
-                    print(error['stdout'])
-                    return error
-                else:
-                    return True
+                process.terminate()
+                process.wait()
+                report = {
+                    'return_code': return_code,
+                    'stdout': stdout.decode(),
+                    'stderr': stderr.decode(),
+                    'junitxml': logs_path,
+                }
+                return report
     except Exception as e:
         process.terminate()
         process.wait()
@@ -113,13 +113,14 @@ def run_test(repo_path: str | os.PathLike, venv_path: str | os.PathLike, test: s
 def run_tests_for_repo(
         repo_path: str | os.PathLike,
         venv_path: str | os.PathLike,
+        logs_path: str | os.PathLike,
         task: Dict[str, Any],
 ):
     # run all tests for current repository version
     test_results = []
     for test in task['tests']:
         try:
-            res = run_test(repo_path, venv_path, test)
+            res = run_test(repo_path, venv_path, logs_path, test)
             test_results.append(res)
         except Exception as e:
             test_results.append(e)
@@ -130,6 +131,7 @@ def run_tests_for_repo(
 def run_gens_for_task(
         repos_dir: str | os.PathLike,
         venvs_dir: str | os.PathLike,
+        logs_dir: str | os.PathLike,
         task: Dict[str, Any],
         gens: List[Dict[str, Any]],
 ):
@@ -137,6 +139,7 @@ def run_gens_for_task(
     repo_name = task['completion_path'].split('/')[0]
     repo_path = os.path.join(repos_dir, repo_name)
     venv_path = os.path.join(venvs_dir, repo_name)
+    logs_path = os.path.join(logs_dir, f"{task['namespace'].replace('.', '/')}.xml")
 
     # validate repo and venv
     if not os.path.exists(repo_path):
@@ -163,7 +166,7 @@ def run_gens_for_task(
             f.write(''.join(file_lines))
         
         # run tests
-        gen_result = run_tests_for_repo(repo_path, venv_path, task)
+        gen_result = run_tests_for_repo(repo_path, venv_path, logs_path, task)
         results.append(gen_result)
 
         # restore script
@@ -185,11 +188,15 @@ def run_tests(
         njobs: int = -1,
         pbar: bool = True,
 ):
-    # Validate paths are absolute
+    # make paths absolute if they are not already
     if not os.path.isabs(repos_dir):
-        raise ValueError(f"repos_dir must be an absolute path, got: {repos_dir}")
+        repos_dir = os.path.abspath(repos_dir)
     if not os.path.isabs(venvs_dir):
-        raise ValueError(f"venvs_dir must be an absolute path, got: {venvs_dir}")
+        venvs_dir = os.path.abspath(venvs_dir)
+    if not os.path.isabs(logs_dir):
+        logs_dir = os.path.abspath(logs_dir)
+    if not os.path.isabs(results_path):
+        results_path = os.path.abspath(results_path)
 
     # TODO: number of threads
     pass
@@ -203,17 +210,10 @@ def run_tests(
 
     try:
         p_bar = tqdm(tasks, total=len(tasks), desc='Testing repositories', disable=not pbar)
-        p_bar.set_postfix({
-            'tests_pass': 0,
-            'tests_error': 0,
-            'repos_pass': 0,
-            'repos_error': 0,
-        })
         for task in p_bar:
-            # TODO: append results to results dict
             try:
-                task_results = run_gens_for_task(repos_dir, venvs_dir, task, completions[task['namespace']])
-                print(task_results)
+                task_results = run_gens_for_task(repos_dir, venvs_dir, logs_dir, task, completions[task['namespace']])
+                results[task['namespace']] = task_results
             except MissingRepoException as e:
                 print('WARNING: Missing repository!', e)
             except MissingVenvException as e:
@@ -224,9 +224,15 @@ def run_tests(
 
         print('Restoring script backups...')
         restore_script_backups(tasks, repos_dir)
+        print('Restored script backups.')
 
-        # TODO: save intermediate results
-        pass
+    finally:
+        print('Saving results...')
+        with open(results_path, 'w') as fp:
+            json.dump(results, fp, indent=4)
+        print(f'Saved results for {len(results)} tasks.')
+
+    return results
 
 if __name__ == '__main__':
     args = parse_args()
@@ -245,7 +251,7 @@ if __name__ == '__main__':
     print(f'Loaded {len(completions)} completions.')
 
     # run tasks
-    run_tests(
+    results = run_tests(
         tasks,
         completions,
         repos_dir=args.repos,
@@ -254,3 +260,4 @@ if __name__ == '__main__':
         results_path=args.results,
         restart=args.restart,
     )
+    pass

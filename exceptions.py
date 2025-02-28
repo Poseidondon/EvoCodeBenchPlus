@@ -1,4 +1,7 @@
 import os
+import json
+
+from typing import Dict, Any
 
 
 class MissingRepoException(Exception):
@@ -23,3 +26,11 @@ class OutOfMemoryException(Exception):
 
     def __str__(self):
         return "Out of memory"
+
+
+class TestException(Exception):
+    def __init__(self, error: Dict[str, Any]):
+        self.error = error
+
+    def __str__(self):
+        return "pytest error:\n" + json.dumps(self.error, indent=4)
