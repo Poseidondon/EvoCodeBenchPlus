@@ -10,13 +10,12 @@ from typing import Mapping, Dict, Any, List
 from tqdm import tqdm
 from func_timeout import func_set_timeout
 
-from utils import load_tasks, load_completions, restore_script_backups, adjust_indent
-from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException, TestException
+from utils import load_tasks, load_completions, restore_script_backups, adjust_indent, parse_junitxml
+from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException
 
 # TODO: parallelism
-# TODO: start from checkpoint and restart
 # TODO: test on oracle and nemesis
-# TODO: parse junitxml
+# TODO: venv installation in different files and errors handling
 
 
 def parse_args():
@@ -101,7 +100,8 @@ def run_test(
                     'return_code': return_code,
                     'stdout': stdout.decode(),
                     'stderr': stderr.decode(),
-                    'junitxml': logs_path,
+                    'junitxml_path': logs_path,
+                    'junitxml': parse_junitxml(logs_path),
                 }
                 return report
     except Exception as e:
@@ -139,7 +139,6 @@ def run_gens_for_task(
     repo_name = task['completion_path'].split('/')[0]
     repo_path = os.path.join(repos_dir, repo_name)
     venv_path = os.path.join(venvs_dir, repo_name)
-    logs_path = os.path.join(logs_dir, f"{task['namespace'].replace('.', '/')}.xml")
 
     # validate repo and venv
     if not os.path.exists(repo_path):
@@ -155,7 +154,9 @@ def run_gens_for_task(
     shutil.copy(script_path, backup_path)
 
     results = []
-    for gen in gens:
+    for ix, gen in enumerate(gens):
+        logs_path = os.path.join(logs_dir, f"{task['namespace'].replace('.', '/')}-{ix}.xml")
+
         # insert completion into script
         completion = adjust_indent(gen['completion'], task['indent'])
         sos, eos = task['body_position'][0] - 1, task['body_position'][1]
@@ -201,7 +202,7 @@ def run_tests(
     # TODO: number of threads
     pass
 
-    if restart:
+    if restart or not os.path.exists(results_path):
         results = {}
     else:
         with open(results_path, 'r') as fp:
@@ -212,7 +213,7 @@ def run_tests(
         restore_script_backups(tasks, repos_dir)
 
     status = {
-        'tested': 0,
+        'tests': 0,
         'skipped': 0,
         'errors': 0,
     }
@@ -220,17 +221,17 @@ def run_tests(
         p_bar = tqdm(tasks, total=len(tasks), desc='Testing repositories', disable=not pbar)
         for task in p_bar:
             p_bar.set_postfix(status)
+            status['tests'] += 1
 
             # continue on saved result
             if task['namespace'] in results:
-                print(f'Skipping {task['namespace']}.')
+                print(f"Skipping {task['namespace']}.")
                 status['skipped'] += 1
                 continue
 
             try:
                 task_results = run_gens_for_task(repos_dir, venvs_dir, logs_dir, task, completions[task['namespace']])
                 results[task['namespace']] = task_results
-                status['tested'] += 1
             except MissingRepoException as e:
                 print('WARNING: Missing repository!', e)
                 status['errors'] += 1

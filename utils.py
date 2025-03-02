@@ -2,6 +2,7 @@ import os, json
 import textwrap
 import shutil
 import pytest
+import xml.etree.ElementTree as ET
 
 from typing import Dict, Any, List
 from collections import defaultdict
@@ -100,3 +101,33 @@ def restore_script_backups(tasks: List[Dict[str, Any]], repos_dir: str | os.Path
         if os.path.exists(backup_path):
             shutil.copy(backup_path, os.path.join(repos_dir, task['completion_path']))
             os.remove(backup_path)
+
+
+def parse_junitxml(junitxml_path: str | os.PathLike):
+    tree = ET.parse(junitxml_path)
+    root = tree.getroot()
+
+    testsuite = root.find('testsuite')
+    if testsuite:
+        report = testsuite.attrib
+        report['testcases'] = []
+        for testcase in testsuite.findall('testcase'):
+            report['testcases'].append(testcase.attrib)
+
+            failure = testcase.find('failure')
+            if failure is None:
+                report['testcases'][-1]['failure'] = {}
+            else:
+                report['testcases'][-1]['failure']= failure.attrib
+                report['testcases'][-1]['failure']['body'] = failure.text
+
+            error = testcase.find('error')
+            if error is None:
+                report['testcases'][-1]['error'] = {}
+            else:
+                report['testcases'][-1]['error'] = error.attrib
+                report['testcases'][-1]['error']['body'] = error.text
+    else:
+        report = {}
+    
+    return report
