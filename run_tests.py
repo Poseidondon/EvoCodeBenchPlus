@@ -201,23 +201,42 @@ def run_tests(
     # TODO: number of threads
     pass
 
-    # TODO: read intermediate results
-    results = {}
+    if restart:
+        results = {}
+    else:
+        with open(results_path, 'r') as fp:
+            results = json.load(fp)
 
     # restore backups if .backups exists
     if os.path.exists('.backups'):
         restore_script_backups(tasks, repos_dir)
 
+    status = {
+        'tested': 0,
+        'skipped': 0,
+        'errors': 0,
+    }
     try:
         p_bar = tqdm(tasks, total=len(tasks), desc='Testing repositories', disable=not pbar)
         for task in p_bar:
+            p_bar.set_postfix(status)
+
+            # continue on saved result
+            if task['namespace'] in results:
+                print(f'Skipping {task['namespace']}.')
+                status['skipped'] += 1
+                continue
+
             try:
                 task_results = run_gens_for_task(repos_dir, venvs_dir, logs_dir, task, completions[task['namespace']])
                 results[task['namespace']] = task_results
+                status['tested'] += 1
             except MissingRepoException as e:
                 print('WARNING: Missing repository!', e)
+                status['errors'] += 1
             except MissingVenvException as e:
                 print('WARNING: Missing venv!', e)
+                status['errors'] += 1
     
     except KeyboardInterrupt as e:
         print('KeyboardInterrupt detected!')
@@ -227,6 +246,8 @@ def run_tests(
         print('Restored script backups.')
 
     finally:
+        print('Testing results:')
+        pprint(status)
         print('Saving results...')
         with open(results_path, 'w') as fp:
             json.dump(results, fp, indent=4)
