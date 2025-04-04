@@ -22,6 +22,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     # input
     parser.add_argument(
+        '-t',
         '--tasks',
         type=str,
         default='dataset/data/data.jsonl',
@@ -30,28 +31,35 @@ def parse_args():
     parser.add_argument(
         '--repos',
         type=str,
+        default='dataset/repos',
         help='Path to a directory with all repositories. Must be an absolute path.',
     )
     parser.add_argument(
         '--venvs',
         type=str,
+        default='venvs',
         help='Path to a directory with all venvs. Must be an absolute path.',
     )
     parser.add_argument(
+        '-c',
         '--completions',
         type=str,
         help='Path to a file with completions',
+        required=True,
     )
     # output
     parser.add_argument(
         '--results',
         type=str,
         help='Path to a file with intermediate results',
+        required=True,
     )
     parser.add_argument(
+        '-l',
         '--logs',
         type=str,
         help='Path to a directory to store pytest logs for each repo',
+        required=True,
     )
     # configuration
     parser.add_argument(
@@ -136,11 +144,12 @@ def run_gens_for_task(
         gens: List[Dict[str, Any]],
 ):
     # get repo name and paths
-    repo_name = task['completion_path'].split('/')[0]
+    repo_name = task['project_path']
     repo_path = os.path.join(repos_dir, repo_name)
     venv_path = os.path.join(venvs_dir, repo_name)
 
     # validate repo and venv
+    # TODO: log this as well
     if not os.path.exists(repo_path):
         raise MissingRepoException(repo_path)
     if not os.path.exists(venv_path):
@@ -251,7 +260,7 @@ def run_tests(
         pprint(status)
         print('Saving results...')
         with open(results_path, 'w') as fp:
-            json.dump(results, fp, indent=4)
+            json.dump(results, fp, indent=4, default=str)
         print(f'Saved results for {len(results)} tasks.')
 
     return results

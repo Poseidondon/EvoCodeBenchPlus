@@ -1,5 +1,7 @@
 dataset/
 .vscode/
 .backups/
-tests/
+output/
 __pycache__
+venvs/
+
