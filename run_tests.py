@@ -15,7 +15,6 @@ from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryEx
 
 # TODO: parallelism
 # TODO: test on oracle and nemesis
-# TODO: venv installation in different files and errors handling
 
 
 def parse_args():
@@ -291,4 +290,3 @@ if __name__ == '__main__':
         results_path=args.results,
         restart=args.restart,
     )
-    pass
