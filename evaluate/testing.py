@@ -2,7 +2,7 @@ import argparse
 import pandas as pd
 import json
 
-from typing import Dict, List
+from typing import Dict, List, Optional, Union
 from collections import defaultdict
 from pprint import pprint
 
@@ -28,19 +28,51 @@ def parse_args():
     return parser.parse_args()
 
 
-def normalize_results(results: Dict) -> Dict[str, List[bool]]:
+def pass_at_k(
+        testcases: Dict[str, List[int]],
+        k: int = 1,
+) -> float:
+    success_cnt = 0
+    for testcase in testcases.values():
+        codes = testcase[:min(k, len(testcase))]
+        success_cnt += int(any(codes))
+    
+    return success_cnt / len(testcases)
+
+
+def normalize_results(
+        results: Dict,
+        error_codes: Optional[Union[int, List[int]]] = None,
+) -> Dict[str, List[int]]:
     """
     results.json ~ {<task>: [<generation-1>, ..., <generation-n>]}
     <generation> ~ [<testsuit-1>, ..., <testsuit-n>]
     <testsuit> ~ {..., 'junitxml': {..., 'testcases': [<testcase>]}}
     """
+    # error codes
+    if error_codes is None:
+        error_codes = [1, 2, 3, 4, 5]
+    elif isinstance(error_codes, int):
+        error_codes = [error_codes]
+    allowed_codes = [0] + error_codes
+
+    # flatten
     testcase2passes = defaultdict(list)
     for task in results:
         for generation in results[task]:
-            for testsuit in generation:
-                for testcase in testsuit['junitxml']['testcases']:
-                    test_pass = not testcase['failure'] and not testcase['error']
-                    testcase2passes[testcase['classname']].append(test_pass)
+            for testcase in generation:
+                test_id = f"{task}-{testcase['test']}"
+                testcase2passes[test_id].append(testcase['return_code'])
+    
+    # convert return codes
+    dropped_testcases = set()
+    for testcase in testcase2passes:
+        testcase2passes[testcase] = [c == 0 for c in testcase2passes[testcase] if c in allowed_codes]
+        if not testcase2passes[testcase]:
+            dropped_testcases.add(testcase)
+    print(f'WARNING: droping {len(dropped_testcases)}/{len(testcase2passes)} broken testcases.')
+    for t in dropped_testcases:
+        del testcase2passes[t]
     
     return testcase2passes
 
@@ -56,5 +88,8 @@ if __name__ == '__main__':
     with open(args.results, 'r') as file:
         results = json.load(file)
     
-    testcases = normalize_results(results)
-    pprint(testcases)
+    testcases = normalize_results(results, error_codes=[1])
+    print(f'Parsed {len(testcases)} testcases')
+
+    pass_at_1 = pass_at_k(testcases, k=1)
+    print('pass_at_1:', pass_at_1)

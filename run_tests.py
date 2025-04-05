@@ -106,7 +106,7 @@ def run_test(
             process.wait()
 
             report = {
-                'testcase': test,
+                'test': test,
                 'return_code': return_code,
                 'stdout': stdout.decode(),
                 'stderr': stderr.decode(),
@@ -133,7 +133,7 @@ def run_tests_for_repo(
             report = run_test(repo_path, venv_path, logs_path, test)
         except (FunctionTimedOut, OutOfMemoryException) as e:
             report = {
-                'testcase': test,
+                'test': test,
                 'return_code': 5,
                 'stdout': '',
                 'stderr': f'{type(e).__name__}: {str(e)}',
