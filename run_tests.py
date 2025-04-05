@@ -8,7 +8,7 @@ import json
 from pprint import pprint
 from typing import Mapping, Dict, Any, List
 from tqdm import tqdm
-from func_timeout import func_set_timeout
+from func_timeout import func_set_timeout, FunctionTimedOut
 
 from utils import load_tasks, load_completions, restore_script_backups, adjust_indent, parse_junitxml
 from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException
@@ -64,12 +64,12 @@ def parse_args():
     parser.add_argument(
         '-r', '--restart',
         action='store_true',
-        help='Forcefully restarts, even if results.jsonl is not empty',
+        help='Forcefully restarts, even if results.json is not empty',
     )
     return parser.parse_args()
 
 
-@func_set_timeout(30)
+@func_set_timeout(40)
 def run_test(
         repo_path: str | os.PathLike,
         venv_path: str | os.PathLike,
@@ -87,34 +87,37 @@ def run_test(
             'PYTHONPATH': f'{repo_path}:{os.environ.get("PYTHONPATH", "")}'
         },
     )
-    try:
-        while True:
-            pid = process.pid
 
-            # handle memory usage
-            process_memory = psutil.Process(pid).memory_info().rss
-            if process_memory > 8 * 1024 * 1024 * 1024:
-                process.terminate()
-                process.wait()
-                return OutOfMemoryException()
-            
-            return_code = process.poll()
-            if return_code is not None:
-                stdout, stderr = process.communicate()
-                process.terminate()
-                process.wait()
-                report = {
-                    'return_code': return_code,
-                    'stdout': stdout.decode(),
-                    'stderr': stderr.decode(),
-                    'junitxml_path': logs_path,
-                    'junitxml': parse_junitxml(logs_path),
-                }
-                return report
-    except Exception as e:
-        process.terminate()
-        process.wait()
-        return e
+    # poll process
+    while True:
+        pid = process.pid
+
+        # handle memory usage
+        process_memory = psutil.Process(pid).memory_info().rss
+        if process_memory > 8 * 1024 * 1024 * 1024:
+            process.terminate()
+            process.wait()
+            raise OutOfMemoryException()
+        
+        return_code = process.poll()
+        if return_code is not None:
+            stdout, stderr = process.communicate()
+            process.terminate()
+            process.wait()
+
+            report = {
+                'testcase': test,
+                'return_code': return_code,
+                'stdout': stdout.decode(),
+                'stderr': stderr.decode(),
+                'junitxml_path': None,
+                'junitxml': None,
+            }
+            if os.path.exists(logs_path):
+                report['junitxml_path'] = logs_path
+                report['junitxml'] = parse_junitxml(logs_path)
+
+            return report
 
 
 def run_tests_for_repo(
@@ -127,10 +130,18 @@ def run_tests_for_repo(
     test_results = []
     for test in task['tests']:
         try:
-            res = run_test(repo_path, venv_path, logs_path, test)
-            test_results.append(res)
-        except Exception as e:
-            test_results.append(e)
+            report = run_test(repo_path, venv_path, logs_path, test)
+        except (FunctionTimedOut, OutOfMemoryException) as e:
+            report = {
+                'testcase': test,
+                'return_code': 5,
+                'stdout': '',
+                'stderr': f'{type(e).__name__}: {str(e)}',
+                'junitxml_path': None,
+                'junitxml': None,
+            }
+        finally:
+            test_results.append(report)
     
     return test_results
 
@@ -180,8 +191,6 @@ def run_gens_for_task(
 
         # restore script
         shutil.copy(backup_path, script_path)
-        # clean up
-        os.remove(backup_path)
     
     return results
 
@@ -249,12 +258,11 @@ def run_tests(
     
     except KeyboardInterrupt as e:
         print('KeyboardInterrupt detected!')
-
+    finally:
         print('Restoring script backups...')
         restore_script_backups(tasks, repos_dir)
         print('Restored script backups.')
 
-    finally:
         print('Testing results:')
         pprint(status)
         print('Saving results...')
