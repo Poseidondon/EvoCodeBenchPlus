@@ -70,7 +70,8 @@ def normalize_results(
         testcase2passes[testcase] = [c == 0 for c in testcase2passes[testcase] if c in allowed_codes]
         if not testcase2passes[testcase]:
             dropped_testcases.add(testcase)
-    print(f'WARNING: droping {len(dropped_testcases)}/{len(testcase2passes)} broken testcases.')
+    if dropped_testcases:
+        print(f'WARNING: droping {len(dropped_testcases)}/{len(testcase2passes)} broken testcases.')
     for t in dropped_testcases:
         del testcase2passes[t]
     

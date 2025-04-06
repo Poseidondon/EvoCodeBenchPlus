@@ -62,6 +62,12 @@ def parse_args():
     )
     # configuration
     parser.add_argument(
+        '-k', '--max-tests',
+        type=int,
+        default=9999,
+        help='Number of tests to run using ascending idx',
+    )
+    parser.add_argument(
         '-r', '--restart',
         action='store_true',
         help='Forcefully restarts, even if results.json is not empty',
@@ -140,8 +146,8 @@ def run_tests_for_repo(
                 'junitxml_path': None,
                 'junitxml': None,
             }
-        finally:
-            test_results.append(report)
+        
+        test_results.append(report)
     
     return test_results
 
@@ -152,6 +158,7 @@ def run_gens_for_task(
         logs_dir: str | os.PathLike,
         task: Dict[str, Any],
         gens: List[Dict[str, Any]],
+        max_tests: int,
 ):
     # get repo name and paths
     repo_name = task['project_path']
@@ -172,8 +179,16 @@ def run_gens_for_task(
     os.makedirs(backup_dir, exist_ok=True)
     shutil.copy(script_path, backup_path)
 
+    # sort gens
+    gens.sort(key=lambda x: x.get('idx', 0))
+    max_idx = gens[min(len(gens) - 1, max_tests - 1)]['idx']
+
     results = []
     for ix, gen in enumerate(gens):
+        # skip tests if max_tests is specified
+        if gen['idx'] > max_idx:
+            continue
+
         logs_path = os.path.join(logs_dir, f"{task['namespace'].replace('.', '/')}-{ix}.xml")
 
         # insert completion into script
@@ -205,6 +220,7 @@ def run_tests(
         restart: bool = False,
         njobs: int = -1,
         pbar: bool = True,
+        max_tests: int = 9999,
 ):
     # make paths absolute if they are not already
     if not os.path.isabs(repos_dir):
@@ -247,7 +263,14 @@ def run_tests(
                 continue
 
             try:
-                task_results = run_gens_for_task(repos_dir, venvs_dir, logs_dir, task, completions[task['namespace']])
+                task_results = run_gens_for_task(
+                    repos_dir,
+                    venvs_dir,
+                    logs_dir,
+                    task,
+                    completions[task['namespace']],
+                    max_tests=max_tests,
+                )
                 results[task['namespace']] = task_results
             except MissingRepoException as e:
                 print('WARNING: Missing repository!', e)
@@ -297,4 +320,5 @@ if __name__ == '__main__':
         logs_dir=args.logs,
         results_path=args.results,
         restart=args.restart,
+        max_tests=args.max_tests
     )

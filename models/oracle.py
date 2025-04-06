@@ -7,7 +7,7 @@ from pathlib import Path
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument('--data_path', default='dataset/data/data.jsonl', help='Path to the data.jsonl file')
+    parser.add_argument('--data_path', required=True, help='Path to the data.jsonl file')
     parser.add_argument('--source_code_root', default='dataset/repos', help='Path to the source code directory')
     parser.add_argument('-o', '--output_file', required=True, type=str, help='Path to the completion file (output file)')
     return parser.parse_args()
@@ -35,7 +35,11 @@ def main():
                 start, end = task['body_position']
                 start -= 1
                 body = '\n'.join(lines[start:end])
-                pred = {'namespace': task['namespace'], 'completion': body}
+                pred = {
+                    'namespace': task['namespace'],
+                    'completion': body,
+                    'idx': 0,
+                }
                 out_f.write(json.dumps(pred) + '\n')
     print(f'Oracle completion successfully wrote.')
 
