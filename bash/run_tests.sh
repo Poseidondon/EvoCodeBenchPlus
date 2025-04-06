@@ -1,6 +1,6 @@
 python run_tests.py\
-    --tasks dataset/data/data-success.jsonl\
+    --tasks dataset/data/oracle.jsonl\
     --completions experiments/oracle/completion.jsonl\
-    --results output/results.json\
+    --results output/results/oracle.json\
     --logs output/logs\
     -r

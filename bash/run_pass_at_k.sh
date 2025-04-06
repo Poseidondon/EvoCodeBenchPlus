@@ -1,3 +1,3 @@
 python evaluate/testing.py\
-    --results output/results.json\
+    --results output/results/oracle.json\
     --output output/pass_at_k

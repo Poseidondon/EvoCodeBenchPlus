@@ -88,7 +88,7 @@ if __name__ == '__main__':
     with open(args.results, 'r') as file:
         results = json.load(file)
     
-    testcases = normalize_results(results, error_codes=[1])
+    testcases = normalize_results(results)
     print(f'Parsed {len(testcases)} testcases')
 
     pass_at_1 = pass_at_k(testcases, k=1)
