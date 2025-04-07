@@ -179,6 +179,17 @@ def run_gens_for_task(
     os.makedirs(backup_dir, exist_ok=True)
     shutil.copy(script_path, backup_path)
 
+    # no generation provided case
+    if not gens:
+        return [[{
+            'test': '__all_tests__',
+            'return_code': 5,
+            'stdout': '',
+            'stderr': 'No generations provided',
+            'junitxml_path': None,
+            'junitxml': None,
+        }]]
+
     # sort gens
     gens.sort(key=lambda x: x.get('idx', 0))
     max_idx = gens[min(len(gens) - 1, max_tests - 1)]['idx']

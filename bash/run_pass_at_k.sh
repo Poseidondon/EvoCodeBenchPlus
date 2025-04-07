@@ -1,3 +1,3 @@
 python evaluate/testing.py\
-    --results output/results/completion-codellama-7b.json\
+    --results output/results/baseline/naive-codellama-13b\
     --output output/pass_at_k
