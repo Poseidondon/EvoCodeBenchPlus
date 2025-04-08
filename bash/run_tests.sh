@@ -1,7 +1,6 @@
 python run_tests.py\
     --tasks dataset/data/oracle.jsonl\
-    --completions experiments/baseline/without_context/codellama-13b/completion.jsonl\
-    --results output/results/baseline/naive-codellama-13b\
+    --completions experiments/racg/no-context/codelamma-7b.jsonl\
+    --results output/results/racg/codelamma-7b.jsonl\
     --logs output/logs\
-    -k 1\
-    -r
+    -k 1

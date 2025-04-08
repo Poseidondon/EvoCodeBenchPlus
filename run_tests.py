@@ -191,7 +191,11 @@ def run_gens_for_task(
         }]]
 
     # sort gens
-    gens.sort(key=lambda x: x.get('idx', 0))
+    try:
+        gens.sort(key=lambda x: x['idx'])
+    except KeyError:
+        for ix, g in enumerate(gens):
+            g['idx'] = ix
     max_idx = gens[min(len(gens) - 1, max_tests - 1)]['idx']
 
     results = []

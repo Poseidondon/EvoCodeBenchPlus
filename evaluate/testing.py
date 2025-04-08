@@ -1,6 +1,6 @@
 import argparse
-import pandas as pd
 import json
+import os
 
 from typing import Dict, List, Optional, Union
 from collections import defaultdict
@@ -16,6 +16,15 @@ def parse_args():
         type=str,
         default='dataset/data/data.jsonl',
         help='Path to a file with test results',
+    )
+    # params
+    parser.add_argument(
+        '-k',
+        '--max-generations',
+        type=int,
+        default=[1],
+        nargs='+',
+        help='List of k values to test',
     )
     # output
     parser.add_argument(
@@ -33,8 +42,12 @@ def pass_at_k(
         k: int = 1,
 ) -> float:
     success_cnt = 0
-    for testcase in testcases.values():
-        codes = testcase[:min(k, len(testcase))]
+    for test, testcase in testcases.items():
+        if k <= len(testcase):
+            codes = testcase[:k]
+        else:
+            print(f'WARNING: not enough generations for {test}!\nrequired: {k} got: {len(testcase)}')
+            return float('nan')
         success_cnt += int(any(codes))
     
     return success_cnt / len(testcases)
@@ -89,8 +102,17 @@ if __name__ == '__main__':
     with open(args.results, 'r') as file:
         results = json.load(file)
     
-    testcases = normalize_results(results, error_codes=[1, 2, 3, 4])
+    # normalize test results
+    testcases = normalize_results(results, error_codes=[1])
     print(f'Parsed {len(testcases)} testcases')
 
-    pass_at_1 = pass_at_k(testcases, k=1)
-    print('pass_at_1:', pass_at_1)
+    # evaluate
+    report = {}
+    for k in args.max_generations:
+        report[f'pass@{k}'] = pass_at_k(testcases, k=k)
+    pprint(report)
+    
+    # save results as json
+    os.makedirs(os.path.dirname(args.output), exist_ok=True)
+    with open(args.output, 'w') as f:
+        f.write(json.dumps(report))
