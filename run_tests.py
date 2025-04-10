@@ -48,9 +48,9 @@ def parse_args():
     )
     # output
     parser.add_argument(
-        '--results',
+        '--tests',
         type=str,
-        help='Path to a file with intermediate results',
+        help='Path to a file with intermediate (or final) test results',
         required=True,
     )
     parser.add_argument(
@@ -238,14 +238,14 @@ def run_tests(
         max_tests: int = 9999,
 ):
     # make paths absolute if they are not already
-    if not os.path.isabs(repos_dir):
-        repos_dir = os.path.abspath(repos_dir)
-    if not os.path.isabs(venvs_dir):
-        venvs_dir = os.path.abspath(venvs_dir)
-    if not os.path.isabs(logs_dir):
-        logs_dir = os.path.abspath(logs_dir)
-    if not os.path.isabs(results_path):
-        results_path = os.path.abspath(results_path)
+    repos_dir = os.path.abspath(repos_dir)
+    venvs_dir = os.path.abspath(venvs_dir)
+    logs_dir = os.path.abspath(logs_dir)
+    results_path = os.path.abspath(results_path)
+
+    # makedirs
+    os.makedirs(os.path.dirname(logs_dir), exist_ok=True)
+    os.makedirs(os.path.dirname(results_path), exist_ok=True)
 
     # TODO: number of threads
     pass
@@ -333,7 +333,7 @@ if __name__ == '__main__':
         repos_dir=args.repos,
         venvs_dir=args.venvs,
         logs_dir=args.logs,
-        results_path=args.results,
+        results_path=args.tests,
         restart=args.restart,
         max_tests=args.max_tests
     )

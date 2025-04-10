@@ -11,8 +11,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     # input
     parser.add_argument(
-        '-r',
-        '--results',
+        '-t',
+        '--tests',
         type=str,
         default='dataset/data/data.jsonl',
         help='Path to a file with test results',
@@ -99,11 +99,11 @@ if __name__ == '__main__':
     print('-' * 256)
 
     # read results
-    with open(args.results, 'r') as file:
+    with open(args.tests, 'r') as file:
         results = json.load(file)
     
     # normalize test results
-    testcases = normalize_results(results, error_codes=[1])
+    testcases = normalize_results(results, error_codes=[1, 2, 3, 4, 5])
     print(f'Parsed {len(testcases)} testcases')
 
     # evaluate

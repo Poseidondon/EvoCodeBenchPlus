@@ -16,10 +16,9 @@ def parse_args():
         help='Path to a file with tasks',
     )
     parser.add_argument(
-        '-r',
-        '--results',
+        '--tests',
         type=str,
-        default='dataset/data/data.jsonl',
+        default='experiments/tests/oracle.json',
         help='Path to a file with test results',
     )
     parser.add_argument(
@@ -52,16 +51,16 @@ if __name__ == '__main__':
     tasks = load_tasks(args.tasks)
     print(f'Loaded {len(tasks)} tasks.')
 
-    # load results
-    with open(args.results, 'r') as file:
-        results = json.load(file)
+    # load tests
+    with open(args.tests, 'r') as file:
+        tests = json.load(file)
 
     # filter tests
     valid_tasks = set()
-    for task in results:
+    for task in tests:
         # check if any testcase has invalid return code
         task_failed = False
-        generation = results[task][0]
+        generation = tests[task][0]
         for testcase in generation:
             if testcase['return_code'] not in args.allowed_codes:
                 task_failed = True
