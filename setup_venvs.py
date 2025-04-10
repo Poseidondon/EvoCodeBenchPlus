@@ -18,7 +18,7 @@ def parse_args():
         '-t',
         '--tasks',
         type=str,
-        default='dataset/data/data.jsonl',
+        default='dataset/data/oracle.jsonl',
         help='Path to a file with tasks',
     )
     parser.add_argument(
