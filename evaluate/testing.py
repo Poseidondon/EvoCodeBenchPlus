@@ -103,7 +103,7 @@ if __name__ == '__main__':
         results = json.load(file)
     
     # normalize test results
-    testcases = normalize_results(results, error_codes=[1, 2, 3, 4, 5])
+    testcases = normalize_results(results, error_codes=[1, 2, 3, 4])
     print(f'Parsed {len(testcases)} testcases')
 
     # evaluate

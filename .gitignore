@@ -1,6 +1,7 @@
 dataset/repos
 dataset/*.gz
-experiments/.logs
+dataset/Source_Code*
+experiments/.logs*
 .vscode/
 .backups/
 output/

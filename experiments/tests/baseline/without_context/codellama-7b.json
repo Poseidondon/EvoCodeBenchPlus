@@ -1,0 +1,1449 @@
+{
+    "benedict.utils.type_util.is_json_serializable": [
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-0.xml -\n============================== 1 passed in 0.50s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-0.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.541",
+                    "timestamp": "2025-04-10T20:23:20.957927+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-1.xml -\n============================== 1 passed in 0.37s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-1.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.440",
+                    "timestamp": "2025-04-10T20:23:23.042530+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-2.xml -\n============================== 1 passed in 0.40s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-2.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.438",
+                    "timestamp": "2025-04-10T20:23:24.947330+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.002",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-3.xml -\n============================== 1 passed in 0.37s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-3.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.461",
+                    "timestamp": "2025-04-10T20:23:26.702410+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.002",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py F                                          [100%]\n\n=================================== FAILURES ===================================\n________________ type_util_test_case.test_is_json_serializable _________________\n\nself = <tests.utils.test_type_util.type_util_test_case testMethod=test_is_json_serializable>\n\n    def test_is_json_serializable(self):\n        f = type_util.is_json_serializable\n>       self.assertTrue(f(None))\n\ntests/utils/test_type_util.py:175: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nval = None\n\n    def is_json_serializable(val):\n    \n        import json\n>       import numpy as np\nE       ModuleNotFoundError: No module named 'numpy'\n\nbenedict/utils/type_util.py:56: ModuleNotFoundError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-4.xml -\n=========================== short test summary info ============================\nFAILED tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable\n============================== 1 failed in 0.56s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-4.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.613",
+                    "timestamp": "2025-04-10T20:23:28.359968+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "ModuleNotFoundError: No module named 'numpy'",
+                                "body": "self = <tests.utils.test_type_util.type_util_test_case testMethod=test_is_json_serializable>\n\n    def test_is_json_serializable(self):\n        f = type_util.is_json_serializable\n>       self.assertTrue(f(None))\n\ntests/utils/test_type_util.py:175: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nval = None\n\n    def is_json_serializable(val):\n    \n        import json\n>       import numpy as np\nE       ModuleNotFoundError: No module named 'numpy'\n\nbenedict/utils/type_util.py:56: ModuleNotFoundError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py F                                          [100%]\n\n=================================== FAILURES ===================================\n________________ type_util_test_case.test_is_json_serializable _________________\n\nself = <tests.utils.test_type_util.type_util_test_case testMethod=test_is_json_serializable>\n\n    def test_is_json_serializable(self):\n        f = type_util.is_json_serializable\n>       self.assertTrue(f(None))\n\ntests/utils/test_type_util.py:175: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nval = None\n\n    def is_json_serializable(val):\n    \n        import json\n>       import numpy as np\nE       ModuleNotFoundError: No module named 'numpy'\n\nbenedict/utils/type_util.py:56: ModuleNotFoundError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-5.xml -\n=========================== short test summary info ============================\nFAILED tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable\n============================== 1 failed in 0.55s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-5.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.631",
+                    "timestamp": "2025-04-10T20:23:30.532239+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.042",
+                            "failure": {
+                                "message": "ModuleNotFoundError: No module named 'numpy'",
+                                "body": "self = <tests.utils.test_type_util.type_util_test_case testMethod=test_is_json_serializable>\n\n    def test_is_json_serializable(self):\n        f = type_util.is_json_serializable\n>       self.assertTrue(f(None))\n\ntests/utils/test_type_util.py:175: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nval = None\n\n    def is_json_serializable(val):\n    \n        import json\n>       import numpy as np\nE       ModuleNotFoundError: No module named 'numpy'\n\nbenedict/utils/type_util.py:56: ModuleNotFoundError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-6.xml -\n============================== 1 passed in 0.33s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-6.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.370",
+                    "timestamp": "2025-04-10T20:23:31.521014+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.002",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-7.xml -\n============================== 1 passed in 0.40s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-7.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.468",
+                    "timestamp": "2025-04-10T20:23:33.087836+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py F                                          [100%]\n\n=================================== FAILURES ===================================\n________________ type_util_test_case.test_is_json_serializable _________________\n\nself = <tests.utils.test_type_util.type_util_test_case testMethod=test_is_json_serializable>\n\n    def test_is_json_serializable(self):\n        f = type_util.is_json_serializable\n>       self.assertTrue(f(None))\n\ntests/utils/test_type_util.py:175: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nval = None\n\n    def is_json_serializable(val):\n    \n        import json\n>       import numpy as np\nE       ModuleNotFoundError: No module named 'numpy'\n\nbenedict/utils/type_util.py:56: ModuleNotFoundError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-8.xml -\n=========================== short test summary info ============================\nFAILED tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable\n============================== 1 failed in 0.55s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-8.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.584",
+                    "timestamp": "2025-04-10T20:23:34.727133+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "ModuleNotFoundError: No module named 'numpy'",
+                                "body": "self = <tests.utils.test_type_util.type_util_test_case testMethod=test_is_json_serializable>\n\n    def test_is_json_serializable(self):\n        f = type_util.is_json_serializable\n>       self.assertTrue(f(None))\n\ntests/utils/test_type_util.py:175: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nval = None\n\n    def is_json_serializable(val):\n    \n        import json\n>       import numpy as np\nE       ModuleNotFoundError: No module named 'numpy'\n\nbenedict/utils/type_util.py:56: ModuleNotFoundError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/utils/test_type_util.py::type_util_test_case::test_is_json_serializable",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/python-benedict\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/utils/test_type_util.py .                                          [100%]\n\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-9.xml -\n============================== 1 passed in 0.31s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/benedict/utils/type_util/is_json_serializable-9.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.362",
+                    "timestamp": "2025-04-10T20:23:36.447754+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.utils.test_type_util.type_util_test_case",
+                            "name": "test_is_json_serializable",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ]
+    ],
+    "feedparser.urls.convert_to_idn": [
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-0.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'xn--...\n========================= 1 failed, 1 warning in 1.05s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-0.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "1.103",
+                    "timestamp": "2025-04-10T20:23:37.866717+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_idn ___________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-0.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_idn - AssertionError: 'xn--h...\n========================= 1 failed, 1 warning in 0.71s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-0.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.743",
+                    "timestamp": "2025-04-10T20:23:40.128691+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\n- xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-0.xml -\n========================= 1 passed, 1 warning in 0.38s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-0.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.399",
+                    "timestamp": "2025-04-10T20:23:42.091060+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-1.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'xn--...\n========================= 1 failed, 1 warning in 0.69s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-1.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.743",
+                    "timestamp": "2025-04-10T20:23:43.626114+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_idn ___________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-1.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_idn - AssertionError: 'xn--h...\n========================= 1 failed, 1 warning in 0.56s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-1.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.605",
+                    "timestamp": "2025-04-10T20:23:45.454723+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\n- xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-1.xml -\n========================= 1 passed, 1 warning in 0.37s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-1.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.403",
+                    "timestamp": "2025-04-10T20:23:47.176228+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/\nE       ?                                    ------------\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\nE       ?                               ++++++++\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-2.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'http...\n========================= 1 failed, 1 warning in 0.56s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-2.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.604",
+                    "timestamp": "2025-04-10T20:23:48.627150+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/\n?                                    ------------\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n?                               ++++++++",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/\nE       ?                                    ------------\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\nE       ?                               ++++++++\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-2.xml -\n========================= 1 passed, 1 warning in 0.45s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-2.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.495",
+                    "timestamp": "2025-04-10T20:23:50.534491+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.043",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-2.xml -\n========================= 1 passed, 1 warning in 0.35s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-2.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.398",
+                    "timestamp": "2025-04-10T20:23:52.361616+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/\nE       ?                                    ------------\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\nE       ?                               ++++++++\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-3.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'http...\n========================= 1 failed, 1 warning in 0.65s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-3.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.716",
+                    "timestamp": "2025-04-10T20:23:53.793751+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/\n?                                    ------------\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n?                               ++++++++",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://xn--hxajbheg2az3al.xn--:8080-t8d5b1biv4a/\nE       ?                                    ------------\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\nE       ?                               ++++++++\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-3.xml -\n========================= 1 passed, 1 warning in 0.46s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-3.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.502",
+                    "timestamp": "2025-04-10T20:23:55.507587+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.005",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-3.xml -\n========================= 1 passed, 1 warning in 0.30s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-3.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.343",
+                    "timestamp": "2025-04-10T20:23:56.973142+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.002",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-4.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'http...\n========================= 1 failed, 1 warning in 0.48s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-4.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.523",
+                    "timestamp": "2025-04-10T20:23:58.226587+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_idn ___________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-4.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_idn - AssertionError: 'http:...\n========================= 1 failed, 1 warning in 0.51s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-4.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.552",
+                    "timestamp": "2025-04-10T20:23:59.669346+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\n- http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-4.xml -\n========================= 1 passed, 1 warning in 0.33s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-4.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.380",
+                    "timestamp": "2025-04-10T20:24:01.189154+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-5.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'http...\n========================= 1 failed, 1 warning in 0.50s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-5.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.545",
+                    "timestamp": "2025-04-10T20:24:02.514287+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:8080/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_idn ___________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-5.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_idn - AssertionError: 'http:...\n========================= 1 failed, 1 warning in 0.48s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-5.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.529",
+                    "timestamp": "2025-04-10T20:24:03.043363+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\n- http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - http://\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-5.xml -\n========================= 1 passed, 1 warning in 0.34s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-5.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.372",
+                    "timestamp": "2025-04-10T20:24:04.478477+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-6.xml -\n========================= 1 passed, 1 warning in 0.33s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-6.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.365",
+                    "timestamp": "2025-04-10T20:24:05.765865+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-6.xml -\n========================= 1 passed, 1 warning in 0.34s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-6.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.375",
+                    "timestamp": "2025-04-10T20:24:07.005484+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.043",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-6.xml -\n========================= 1 passed, 1 warning in 0.38s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-6.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.433",
+                    "timestamp": "2025-04-10T20:24:08.250499+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-7.xml -\n========================= 1 passed, 1 warning in 0.37s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-7.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.371",
+                    "timestamp": "2025-04-10T20:24:09.590275+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-7.xml -\n========================= 1 passed, 1 warning in 0.32s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-7.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.357",
+                    "timestamp": "2025-04-10T20:24:10.934092+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.043",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-7.xml -\n========================= 1 passed, 1 warning in 0.31s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-7.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.354",
+                    "timestamp": "2025-04-10T20:24:12.236486+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.031",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-8.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'xn--...\n========================= 1 failed, 1 warning in 0.53s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-8.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.574",
+                    "timestamp": "2025-04-10T20:24:13.497324+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.003",
+                            "failure": {
+                                "message": "AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--:8080/-2we1c5bjx7a\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_idn ___________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-8.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_idn - AssertionError: 'xn--h...\n========================= 1 failed, 1 warning in 0.48s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-8.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.516",
+                    "timestamp": "2025-04-10T20:24:15.004657+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.033",
+                            "failure": {
+                                "message": "AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\n- xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - xn--http://-2kf8bbvln0d5b5cs.xn--/-slbruens\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-8.xml -\n========================= 1 passed, 1 warning in 0.35s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-8.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.349",
+                    "timestamp": "2025-04-10T20:24:16.452285+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_port",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_port __________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:-8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:-8080/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-9.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_port - AssertionError: 'http...\n========================= 1 failed, 1 warning in 0.48s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-9.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.528",
+                    "timestamp": "2025-04-10T20:24:17.750760+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_port",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AssertionError: 'http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:-8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\n- http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:-8080/\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_port>\n\n    def test_port(self):\n        r = feedparser.urls.convert_to_idn('http://%s:8080/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/')\nE       AssertionError: 'http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:-8080/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/'\nE       - http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae:-8080/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp:8080/\n\ntests/runtests.py:494: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_idn",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py F                                                      [100%]\n\n=================================== FAILURES ===================================\n__________________________ TestConvertToIdn.test_idn ___________________________\n\nself = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-9.xml -\n=========================== short test summary info ============================\nFAILED tests/runtests.py::TestConvertToIdn::test_idn - AssertionError: 'http:...\n========================= 1 failed, 1 warning in 0.46s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-9.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.488",
+                    "timestamp": "2025-04-10T20:24:19.272658+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_idn",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AssertionError: 'http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\n- http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\n+ http://xn--hxajbheg2az3al.xn--jxalpdlp/",
+                                "body": "self = <runtests.TestConvertToIdn testMethod=test_idn>\n\n    def test_idn(self):\n        r = feedparser.urls.convert_to_idn('http://%s/' % (self.hostname,))\n>       self.assertEqual(r, 'http://xn--hxajbheg2az3al.xn--jxalpdlp/')\nE       AssertionError: 'http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/' != 'http://xn--hxajbheg2az3al.xn--jxalpdlp/'\nE       - http:-//xn--\u03c0\u03b1\u03c1\u03ac\u03b4\u03b5\u03b9\u03b3\u03bc\u03b1.xn--\u03b4\u03bf\u03ba\u03b9\u03bc\u03ae/\nE       + http://xn--hxajbheg2az3al.xn--jxalpdlp/\n\ntests/runtests.py:490: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "test": "tests/runtests.py::TestConvertToIdn::test_control",
+                "return_code": 0,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser\ncollected 1 item\n\ntests/runtests.py .                                                      [100%]\n\n=============================== warnings summary ===============================\nfeedparser/encodings.py:29\n  /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/feedparser/feedparser/encodings.py:29: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13\n    import cgi\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-9.xml -\n========================= 1 passed, 1 warning in 0.29s =========================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/feedparser/urls/convert_to_idn-9.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.326",
+                    "timestamp": "2025-04-10T20:24:20.664694+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.runtests.TestConvertToIdn",
+                            "name": "test_control",
+                            "time": "0.001",
+                            "failure": {},
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ]
+    ],
+    "mistune.toc.add_toc_hook": [
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n        add_toc_hook(md, heading_id=heading_id)\n        html = md('# h1')\n>       self.assertEqual(html, '<h1 id=\"t-1\">h1</h1>\\n')\nE       AssertionError: '<h1>h1</h1>\\n' != '<h1 id=\"t-1\">h1</h1>\\n'\nE       - <h1>h1</h1>\nE       + <h1 id=\"t-1\">h1</h1>\n\ntests/test_hooks.py:23: AssertionError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-0.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Ass...\n============================== 1 failed in 0.38s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-0.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.421",
+                    "timestamp": "2025-04-10T20:24:22.060232+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.044",
+                            "failure": {
+                                "message": "AssertionError: '<h1>h1</h1>\\n' != '<h1 id=\"t-1\">h1</h1>\\n'\n- <h1>h1</h1>\n+ <h1 id=\"t-1\">h1</h1>",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n        add_toc_hook(md, heading_id=heading_id)\n        html = md('# h1')\n>       self.assertEqual(html, '<h1 id=\"t-1\">h1</h1>\\n')\nE       AssertionError: '<h1>h1</h1>\\n' != '<h1 id=\"t-1\">h1</h1>\\n'\nE       - <h1>h1</h1>\nE       + <h1 id=\"t-1\">h1</h1>\n\ntests/test_hooks.py:23: AssertionError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7fa908d4e950>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7fa908d3f1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc):\n            state = md.state\n            state.toc_items = toc.get(state.toc_depth, [])\n            state.toc_min_level = min_level\n            state.toc_max_level = max_level\n            state.toc_heading_id = heading_id\n    \n>       md.treeprocessors.register(toc_hook, 'toc_hook', 999)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:31: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-1.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.25s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-1.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.283",
+                    "timestamp": "2025-04-10T20:24:23.377533+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'treeprocessors'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7fa908d4e950>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7fa908d3f1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc):\n            state = md.state\n            state.toc_items = toc.get(state.toc_depth, [])\n            state.toc_min_level = min_level\n            state.toc_max_level = max_level\n            state.toc_heading_id = heading_id\n    \n>       md.treeprocessors.register(toc_hook, 'toc_hook', 999)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:31: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7ff9fa70e450>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7ff9fa6fb1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_tokens, state):\n            state.env[\"toc_tokens\"] = toc_tokens\n    \n        md.toc_tokens = []\n>       md.preprocessors.add(\"toc\", toc_hook, \"_begin\")\nE       AttributeError: 'Markdown' object has no attribute 'preprocessors'\n\nsrc/mistune/toc.py:28: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-2.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.22s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-2.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.256",
+                    "timestamp": "2025-04-10T20:24:24.614991+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'preprocessors'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7ff9fa70e450>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7ff9fa6fb1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_tokens, state):\n            state.env[\"toc_tokens\"] = toc_tokens\n    \n        md.toc_tokens = []\n>       md.preprocessors.add(\"toc\", toc_hook, \"_begin\")\nE       AttributeError: 'Markdown' object has no attribute 'preprocessors'\n\nsrc/mistune/toc.py:28: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7fb730786810>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7fb73077b1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_list):\n            \"\"\"\n            This function saves TOC items into the state.env.\n            Input-Output Arguments\n            :param toc_list: List. The TOC items.\n            :return: No return values.\n            \"\"\"\n            state.env['toc'] = toc_list\n    \n        md.toc_tokens = []\n        md.toc_tokens.extend(\n>           md.parser.blockprocessors['toc'].run(\n                '',\n                state=state,\n                toc_tokens=md.toc_tokens,\n                min_level=min_level,\n                max_level=max_level,\n                heading_id=heading_id,\n            )\n        )\nE       AttributeError: 'Markdown' object has no attribute 'parser'\n\nsrc/mistune/toc.py:35: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-3.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.25s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-3.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.293",
+                    "timestamp": "2025-04-10T20:24:25.768233+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'parser'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7fb730786810>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7fb73077b1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_list):\n            \"\"\"\n            This function saves TOC items into the state.env.\n            Input-Output Arguments\n            :param toc_list: List. The TOC items.\n            :return: No return values.\n            \"\"\"\n            state.env['toc'] = toc_list\n    \n        md.toc_tokens = []\n        md.toc_tokens.extend(\n>           md.parser.blockprocessors['toc'].run(\n                '',\n                state=state,\n                toc_tokens=md.toc_tokens,\n                min_level=min_level,\n                max_level=max_level,\n                heading_id=heading_id,\n            )\n        )\nE       AttributeError: 'Markdown' object has no attribute 'parser'\n\nsrc/mistune/toc.py:35: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7ff52bb022d0>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7ff52baef240>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_tokens, state):\n            \"\"\"\n            This function is a hook to save table of contents (TOC) items into the state.env. It is usually helpful for doc generator.\n            Input-Output Arguments\n            :param toc_tokens: List. The list of TOC items.\n            :param state: Dictionary. The state of the Markdown instance.\n            :return: No return values.\n            \"\"\"\n            toc_items = []\n            for item in toc_tokens:\n                if item.level <= max_level:\n                    if item.level >= min_level:\n                        if heading_id:\n                            item.id = heading_id(item.text)\n                        else:\n                            item.id = item.text.lower().replace(' ', '-')\n                        toc_items.append(item)\n            state.env['toc_items'] = toc_items\n    \n        md.toc_tokens = []\n        md.toc_hook = toc_hook\n>       md.treeprocessors.register(md.toc_hook, 'toc_hook', 85)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:45: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-4.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.27s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-4.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.306",
+                    "timestamp": "2025-04-10T20:24:27.059658+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.002",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'treeprocessors'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7ff52bb022d0>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7ff52baef240>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_tokens, state):\n            \"\"\"\n            This function is a hook to save table of contents (TOC) items into the state.env. It is usually helpful for doc generator.\n            Input-Output Arguments\n            :param toc_tokens: List. The list of TOC items.\n            :param state: Dictionary. The state of the Markdown instance.\n            :return: No return values.\n            \"\"\"\n            toc_items = []\n            for item in toc_tokens:\n                if item.level <= max_level:\n                    if item.level >= min_level:\n                        if heading_id:\n                            item.id = heading_id(item.text)\n                        else:\n                            item.id = item.text.lower().replace(' ', '-')\n                        toc_items.append(item)\n            state.env['toc_items'] = toc_items\n    \n        md.toc_tokens = []\n        md.toc_hook = toc_hook\n>       md.treeprocessors.register(md.toc_hook, 'toc_hook', 85)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:45: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7f43f39f9f90>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7f43f39eb1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        # pylint: disable=unused-argument\n    \n        def toc_hook(toc_tokens, state):\n            \"\"\"\n            This function is a hook to save table of contents (TOC) items into the state.env. It is usually helpful for doc\n            generator.\n            Input-Output Arguments\n            :param toc_tokens: List. The list of TOC items.\n            :param state: Dictionary. The state of the current Markdown instance.\n            :return: No return values.\n            \"\"\"\n    \n            # pylint: disable=unused-argument\n    \n            if \"toc\" not in state.env:\n                state.env[\"toc\"] = []\n    \n            for toc_token in toc_tokens:\n                if toc_token.level >= min_level and toc_token.level <= max_level:\n                    if heading_id is not None:\n                        toc_token.id = heading_id(toc_token.text)\n                    state.env[\"toc\"].append(toc_token)\n    \n>       md.toc_tokens.insert(0, toc_hook)\nE       AttributeError: 'Markdown' object has no attribute 'toc_tokens'\n\nsrc/mistune/toc.py:47: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-5.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.28s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-5.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.304",
+                    "timestamp": "2025-04-10T20:24:28.386907+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'toc_tokens'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7f43f39f9f90>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7f43f39eb1a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        # pylint: disable=unused-argument\n    \n        def toc_hook(toc_tokens, state):\n            \"\"\"\n            This function is a hook to save table of contents (TOC) items into the state.env. It is usually helpful for doc\n            generator.\n            Input-Output Arguments\n            :param toc_tokens: List. The list of TOC items.\n            :param state: Dictionary. The state of the current Markdown instance.\n            :return: No return values.\n            \"\"\"\n    \n            # pylint: disable=unused-argument\n    \n            if \"toc\" not in state.env:\n                state.env[\"toc\"] = []\n    \n            for toc_token in toc_tokens:\n                if toc_token.level >= min_level and toc_token.level <= max_level:\n                    if heading_id is not None:\n                        toc_token.id = heading_id(toc_token.text)\n                    state.env[\"toc\"].append(toc_token)\n    \n>       md.toc_tokens.insert(0, toc_hook)\nE       AttributeError: 'Markdown' object has no attribute 'toc_tokens'\n\nsrc/mistune/toc.py:47: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 4,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 0 items / 1 error\n\n==================================== ERRORS ====================================\n_____________________ ERROR collecting tests/test_hooks.py _____________________\n../../../../venvs/Text-Processing/mistune/lib/python3.11/site-packages/_pytest/python.py:493: in importtestmodule\n    mod = import_path(\n../../../../venvs/Text-Processing/mistune/lib/python3.11/site-packages/_pytest/pathlib.py:587: in import_path\n    importlib.import_module(module_name)\n/home/k1shin/miniconda3/envs/EvoCodeBenchPlus/lib/python3.11/importlib/__init__.py:126: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n<frozen importlib._bootstrap>:1204: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1176: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:690: in _load_unlocked\n    ???\n../../../../venvs/Text-Processing/mistune/lib/python3.11/site-packages/_pytest/assertion/rewrite.py:185: in exec_module\n    exec(co, module.__dict__)\ntests/test_hooks.py:3: in <module>\n    from mistune.toc import add_toc_hook, render_toc_ul\nE     File \"/home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune/src/mistune/toc.py\", line 70\nE       md.toc_html =\nE                    ^\nE   SyntaxError: invalid syntax\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-6.xml -\n=========================== short test summary info ============================\nERROR tests/test_hooks.py\n=============================== 1 error in 0.62s ===============================\n",
+                "stderr": "ERROR: found no collectors for /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune/tests/test_hooks.py::TestTocHook::test_customize_heading_id_func\n\n",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-6.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "1",
+                    "failures": "0",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.660",
+                    "timestamp": "2025-04-10T20:24:29.682340+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "",
+                            "name": "tests.test_hooks",
+                            "time": "0.000",
+                            "failure": {},
+                            "error": {
+                                "message": "collection failure",
+                                "body": "../../../../venvs/Text-Processing/mistune/lib/python3.11/site-packages/_pytest/python.py:493: in importtestmodule\n    mod = import_path(\n../../../../venvs/Text-Processing/mistune/lib/python3.11/site-packages/_pytest/pathlib.py:587: in import_path\n    importlib.import_module(module_name)\n/home/k1shin/miniconda3/envs/EvoCodeBenchPlus/lib/python3.11/importlib/__init__.py:126: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n<frozen importlib._bootstrap>:1204: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1176: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:690: in _load_unlocked\n    ???\n../../../../venvs/Text-Processing/mistune/lib/python3.11/site-packages/_pytest/assertion/rewrite.py:185: in exec_module\n    exec(co, module.__dict__)\ntests/test_hooks.py:3: in <module>\n    from mistune.toc import add_toc_hook, render_toc_ul\nE     File \"/home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune/src/mistune/toc.py\", line 70\nE       md.toc_html =\nE                    ^\nE   SyntaxError: invalid syntax"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7feb0d6a2850>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7feb0d693240>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        if heading_id is None:\n            heading_id = lambda x: x.lower().replace(' ', '-')\n    \n        def toc_hook(toc):\n            toc_list = []\n            for item in toc:\n                if item.level >= min_level and item.level <= max_level:\n                    toc_list.append(item)\n            md.state.env['toc'] = toc_list\n            md.state.env['heading_id'] = heading_id\n    \n        md.toc_hook = toc_hook\n>       md.treeprocessors.register(md.toc_hook, 'toc_hook', 85)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:36: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-7.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.31s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-7.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.354",
+                    "timestamp": "2025-04-10T20:24:31.519278+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'treeprocessors'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7feb0d6a2850>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7feb0d693240>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        if heading_id is None:\n            heading_id = lambda x: x.lower().replace(' ', '-')\n    \n        def toc_hook(toc):\n            toc_list = []\n            for item in toc:\n                if item.level >= min_level and item.level <= max_level:\n                    toc_list.append(item)\n            md.state.env['toc'] = toc_list\n            md.state.env['heading_id'] = heading_id\n    \n        md.toc_hook = toc_hook\n>       md.treeprocessors.register(md.toc_hook, 'toc_hook', 85)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:36: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7f323f41e310>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7f323f40b2e0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_list):\n            \"\"\"\n            This function saves TOC items into the state.env.\n            Input-Output Arguments\n            :param toc_list: List. The TOC items.\n            :return: No return values.\n            \"\"\"\n            if toc_list:\n                toc_list = toc_list[1:]\n                toc_list = [item for item in toc_list if min_level <= int(item[0].strip('0')) <= max_level]\n                if heading_id:\n                    toc_list = [item + (heading_id(item[2]),) for item in toc_list]\n                md.state.env['toc_list'] = toc_list\n    \n        md.toc_hook = toc_hook\n>       md.registerExtension(md.__class__('toc_hook'))\nE       AttributeError: 'Markdown' object has no attribute 'registerExtension'\n\nsrc/mistune/toc.py:39: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-8.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.27s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-8.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.304",
+                    "timestamp": "2025-04-10T20:24:32.907645+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.027",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'registerExtension'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7f323f41e310>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7f323f40b2e0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        def toc_hook(toc_list):\n            \"\"\"\n            This function saves TOC items into the state.env.\n            Input-Output Arguments\n            :param toc_list: List. The TOC items.\n            :return: No return values.\n            \"\"\"\n            if toc_list:\n                toc_list = toc_list[1:]\n                toc_list = [item for item in toc_list if min_level <= int(item[0].strip('0')) <= max_level]\n                if heading_id:\n                    toc_list = [item + (heading_id(item[2]),) for item in toc_list]\n                md.state.env['toc_list'] = toc_list\n    \n        md.toc_hook = toc_hook\n>       md.registerExtension(md.__class__('toc_hook'))\nE       AttributeError: 'Markdown' object has no attribute 'registerExtension'\n\nsrc/mistune/toc.py:39: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ],
+        [
+            {
+                "test": "tests/test_hooks.py::TestTocHook::test_customize_heading_id_func",
+                "return_code": 1,
+                "stdout": "============================= test session starts ==============================\nplatform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0\nrootdir: /home/k1shin/EvoCodeBenchPlus/dataset/repos/Text-Processing/mistune\nconfigfile: pyproject.toml\ncollected 1 item\n\ntests/test_hooks.py F                                                    [100%]\n\n=================================== FAILURES ===================================\n__________________ TestTocHook.test_customize_heading_id_func __________________\n\nself = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7f5eaac1a910>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7f5eaac071a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        if not heading_id:\n            heading_id = lambda x: x.lower().replace(' ', '-')\n    \n        def toc_treeprocessor(md, elements):\n            toc_list = []\n            for item in elements:\n                if item.level in range(min_level, max_level + 1):\n                    toc_list.append(item)\n            md.state.toc_tokens = toc_list\n    \n>       md.treeprocessors.register(toc_treeprocessor, 'toc', 10)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:34: AttributeError\n- generated xml file: /home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-9.xml -\n=========================== short test summary info ============================\nFAILED tests/test_hooks.py::TestTocHook::test_customize_heading_id_func - Att...\n============================== 1 failed in 0.22s ===============================\n",
+                "stderr": "",
+                "junitxml_path": "/home/k1shin/EvoCodeBenchPlus/experiments/.logs/mistune/toc/add_toc_hook-9.xml",
+                "junitxml": {
+                    "name": "pytest",
+                    "errors": "0",
+                    "failures": "1",
+                    "skipped": "0",
+                    "tests": "1",
+                    "time": "0.269",
+                    "timestamp": "2025-04-10T20:24:34.441896+03:00",
+                    "hostname": "DESKTOP-ST3RM3J",
+                    "testcases": [
+                        {
+                            "classname": "tests.test_hooks.TestTocHook",
+                            "name": "test_customize_heading_id_func",
+                            "time": "0.001",
+                            "failure": {
+                                "message": "AttributeError: 'Markdown' object has no attribute 'treeprocessors'",
+                                "body": "self = <tests.test_hooks.TestTocHook testMethod=test_customize_heading_id_func>\n\n    def test_customize_heading_id_func(self):\n        def heading_id(token, i):\n            return 't-' + str(i + 1)\n    \n        md = create_markdown(escape=False)\n>       add_toc_hook(md, heading_id=heading_id)\n\ntests/test_hooks.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmd = <mistune.markdown.Markdown object at 0x7f5eaac1a910>, min_level = 1\nmax_level = 3\nheading_id = <function TestTocHook.test_customize_heading_id_func.<locals>.heading_id at 0x7f5eaac071a0>\n\n    def add_toc_hook(md, min_level=1, max_level=3, heading_id=None):\n        \"\"\"Add a hook to save toc items into ``state.env``. This is\n        usually helpful for doc generator::\n    \n            import mistune\n            from mistune.toc import add_toc_hook, render_toc_ul\n    \n            md = mistune.create_markdown(...)\n            add_toc_hook(md)\n    \n            html, state = md.parse(text)\n            toc_items = state.env['toc_items']\n            toc_html = render_toc_ul(toc_items)\n    \n        :param md: Markdown instance\n        :param min_level: min heading level\n        :param max_level: max heading level\n        :param heading_id: a function to generate heading_id\n        \"\"\"\n    \n        if not heading_id:\n            heading_id = lambda x: x.lower().replace(' ', '-')\n    \n        def toc_treeprocessor(md, elements):\n            toc_list = []\n            for item in elements:\n                if item.level in range(min_level, max_level + 1):\n                    toc_list.append(item)\n            md.state.toc_tokens = toc_list\n    \n>       md.treeprocessors.register(toc_treeprocessor, 'toc', 10)\nE       AttributeError: 'Markdown' object has no attribute 'treeprocessors'\n\nsrc/mistune/toc.py:34: AttributeError"
+                            },
+                            "error": {}
+                        }
+                    ]
+                }
+            }
+        ]
+    ]
+}

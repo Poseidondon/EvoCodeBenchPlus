@@ -12,7 +12,9 @@ wget -q --show-progress -O dataset/Source_Code.tar.gz https://huggingface.co/dat
 
 # Extract the archive
 echo "Extracting dataset..."
-tar -xzf dataset/Source_Code.tar.gz -C dataset/repos
+tar -xzf dataset/Source_Code.tar.gz -C dataset/
+mv -r dataset/Source_Code/* dataset/repos/
+rm -r dataset/Source_Code
 
 # Verify extraction
 if [ "$(ls -A dataset/repos)" ]; then

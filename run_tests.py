@@ -72,6 +72,11 @@ def parse_args():
         action='store_true',
         help='Forcefully restarts, even if results.json is not empty',
     )
+    parser.add_argument(
+        '-s', '--signature-completed',
+        action='store_true',
+        help='If true, assume that completion contains signature',
+    )
     return parser.parse_args()
 
 
@@ -83,6 +88,18 @@ def run_test(
         test: str | os.PathLike,
 ):
     cmd = f'source {venv_path}/bin/activate && pytest {test} --junitxml={logs_path}'
+
+    # generate possible path roots
+    repo_name = os.path.basename(repo_path)
+    repo_dirname = os.path.dirname(repo_path)
+    roots = [
+        repo_path,
+        # os.path.join(repo_path, 'repo_name'),
+        # os.path.join(repo_path, 'src'),
+        # os.path.join(repo_path, 'build/lib')
+    ]
+    roots_str = ':'.join(roots)
+
     process = subprocess.Popen(
         ['bash', '-c', cmd],
         cwd=repo_path,
@@ -90,7 +107,7 @@ def run_test(
         stderr=subprocess.PIPE,
         env={
             **os.environ,
-            'PYTHONPATH': f'{repo_path}:{os.environ.get("PYTHONPATH", "")}'
+            'PYTHONPATH': f'{roots_str}:{os.environ.get("PYTHONPATH", "")}'
         },
     )
 
@@ -159,6 +176,7 @@ def run_gens_for_task(
         task: Dict[str, Any],
         gens: List[Dict[str, Any]],
         max_tests: int,
+        signature_completed: bool,
 ):
     # get repo name and paths
     repo_name = task['project_path']
@@ -183,7 +201,7 @@ def run_gens_for_task(
     if not gens:
         return [[{
             'test': '__all_tests__',
-            'return_code': 5,
+            'return_code': 6,
             'stdout': '',
             'stderr': 'No generations provided',
             'junitxml_path': None,
@@ -208,7 +226,12 @@ def run_gens_for_task(
 
         # insert completion into script
         completion = adjust_indent(gen['completion'], task['indent'])
-        sos, eos = task['body_position'][0] - 1, task['body_position'][1]
+        if signature_completed:
+            sos = task['signature_position'][0] - 1
+        else:
+            sos = task['body_position'][0] - 1
+        eos = task['body_position'][1]
+
         with open(backup_path, 'r') as f:
             file_lines = f.readlines()
         file_lines = file_lines[:sos] + ['\n', completion, '\n'] + file_lines[eos:]
@@ -236,6 +259,7 @@ def run_tests(
         njobs: int = -1,
         pbar: bool = True,
         max_tests: int = 9999,
+        signature_completed: bool = False,
 ):
     # make paths absolute if they are not already
     repos_dir = os.path.abspath(repos_dir)
@@ -285,6 +309,7 @@ def run_tests(
                     task,
                     completions[task['namespace']],
                     max_tests=max_tests,
+                    signature_completed=signature_completed,
                 )
                 results[task['namespace']] = task_results
             except MissingRepoException as e:
@@ -335,5 +360,6 @@ if __name__ == '__main__':
         logs_dir=args.logs,
         results_path=args.tests,
         restart=args.restart,
-        max_tests=args.max_tests
+        max_tests=args.max_tests,
+        signature_completed=args.signature_completed,
     )
