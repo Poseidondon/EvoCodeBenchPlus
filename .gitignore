@@ -7,3 +7,4 @@ experiments/.logs*
 output/
 __pycache__
 venvs/
+.ipynb_checkpoints

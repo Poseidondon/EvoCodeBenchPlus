@@ -44,13 +44,6 @@ def parse_args():
 
     return parser.parse_args()
 
-
-# globals
-ENV = os.environ.copy()
-ROOT = '/home/k1shin/EvoCodeBenchPlus'
-ENV["repos_dir"] = os.path.join(ROOT, 'dataset/repos')
-ENV["venv_dir"] = os.path.join(ROOT, 'venvs')
-
 # TODO: default policy
 # TODO: catch errors?: check that requiremetns exist and all modules installed
 

@@ -1,4 +1,4 @@
-model=racg/context/deepseek-coder-33b
+model=racg/without_context/deepseek-coder-6.7b-base_greedy
 
 python evaluate/testing.py\
     --tests experiments/tests/$model.json\
