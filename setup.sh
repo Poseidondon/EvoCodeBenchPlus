@@ -3,17 +3,27 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# conda environment
+# conda create --name EvoCodeBench python=3.11
+# conda activate EvoCodeBench
+pip install pytest
+pip install numpy
+pip install tqdm
+pip install tiktoken
+pip install psutil
+pip install func_timeout
+
 # Create dataset directory if it doesn't exist
 mkdir -p dataset/repos
 
 # Download dataset
 echo "Downloading dataset..."
-wget -q --show-progress -O dataset/Source_Code.tar.gz https://huggingface.co/datasets/LJ0815/DevEval/resolve/main/Source_Code.tar.gz
+# wget -q --show-progress -O dataset/Source_Code.tar.gz https://huggingface.co/datasets/LJ0815/DevEval/resolve/main/Source_Code.tar.gz
 
 # Extract the archive
 echo "Extracting dataset..."
 tar -xzf dataset/Source_Code.tar.gz -C dataset/
-mv -r dataset/Source_Code/* dataset/repos/
+mv dataset/Source_Code/* dataset/repos/
 rm -r dataset/Source_Code
 
 # Verify extraction

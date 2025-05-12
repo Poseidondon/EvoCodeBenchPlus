@@ -1,9 +1,9 @@
-model=racg/without_context/deepseek-coder-6.7b-base_greedy
+model=oracle
 
 python run_tests.py\
-    --tasks /home/jovyan/work/diplom/RAGC/data/evocodebench/oracle.jsonl\
-    --repos /home/jovyan/work/diplom/RAGC/data/evocodebench/repos/Source_Code\
-    --completions experiments/completions/$model/completion.jsonl\
+    --tasks /home/jovyan/work/diplom/EvoCodeBenchPlus/dataset/data/oracle.jsonl\
+    --repos /home/jovyan/work/diplom/EvoCodeBenchPlus/dataset/repos\
+    --completions experiments/completions/$model.jsonl\
     --tests experiments/tests/$model.json\
     --logs experiments/.logs\
     -k 1\
