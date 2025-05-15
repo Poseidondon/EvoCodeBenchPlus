@@ -1,4 +1,4 @@
-model=oracle
+model=racg/without_context/CodeLlama-7b-Python-hf/greedy
 
 python run_tests.py\
     --tasks /home/jovyan/work/diplom/EvoCodeBenchPlus/dataset/data/oracle.jsonl\
