@@ -1,4 +1,4 @@
-model=racg/context/deepseek-coder-33b
+model=racg/without_context/CodeLlama-7b-Python-hf/greedy
 
 python evaluate/testing.py\
     --tests experiments/tests/$model.json\
