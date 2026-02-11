@@ -13,26 +13,13 @@ pip install tiktoken
 pip install psutil
 pip install func_timeout
 
-# Create dataset directory if it doesn't exist
-mkdir -p dataset/repos
-
-# Download dataset
-echo "Downloading dataset..."
-# wget -q --show-progress -O dataset/Source_Code.tar.gz https://huggingface.co/datasets/LJ0815/DevEval/resolve/main/Source_Code.tar.gz
-
-# Extract the archive
-echo "Extracting dataset..."
-tar -xzf dataset/Source_Code.tar.gz -C dataset/
-mv dataset/Source_Code/* dataset/repos/
-rm -r dataset/Source_Code
-
-# Verify extraction
-if [ "$(ls -A dataset/repos)" ]; then
-    echo "Dataset extracted successfully to dataset/repos"
+# load repositories
+echo "Loading dataset"
+if [ -f bash/load_data.sh ]; then
+    bash bash/load_data.sh
 else
-    echo "Error: Extraction failed or archive is empty" >&2
+    echo "Error: load_data.sh not found"
     exit 1
-fi
 
 # Setup virtual environments
 echo "Setting up virtual environments..."

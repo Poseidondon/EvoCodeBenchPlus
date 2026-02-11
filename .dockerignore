@@ -1,0 +1,33 @@
+# Git and IDE
+.git
+.gitignore
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info
+.eggs
+*.egg
+
+# Runtime data (mount these as volumes instead)
+dataset/repos
+dataset/*.gz
+dataset/Source_Code*
+venvs
+.backups
+experiments/.logs*
+output
+
+# Jupyter
+.ipynb_checkpoints
+
+# Keep dataset/data/*.jsonl in image if present (task lists); exclude large/binary
+# dataset/data is not in .gitignore so small jsonl files may be in repo

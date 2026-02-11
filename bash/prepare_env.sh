@@ -1,3 +1,2 @@
-sudo apt-get install build-essential
-sudo apt-get isntall libx11-devel
-sudo apt-get install xorg-dev libglu1-mesa-dev
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends build-essential libx11-dev xorg-dev libglu1-mesa-dev
