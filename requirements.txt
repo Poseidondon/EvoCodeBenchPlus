@@ -1,0 +1,7 @@
+# Pinned for reproducible Docker builds
+tqdm
+pytest
+numpy
+tiktoken
+psutil
+func_timeout

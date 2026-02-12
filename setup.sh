@@ -6,13 +6,7 @@ set -e
 # conda environment
 # conda create --name EvoCodeBench python=3.11
 # conda activate EvoCodeBench
-pip install pytest
-pip install numpy
-pip install tqdm
-pip install tiktoken
-pip install psutil
-pip install func_timeout
-
+pip install -r requirements.txt
 # load repositories
 echo "Loading dataset"
 if [ -f bash/load_data.sh ]; then

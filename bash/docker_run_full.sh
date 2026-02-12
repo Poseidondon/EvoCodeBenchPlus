@@ -32,7 +32,9 @@ echo "---"
 echo "Step 1/2: run_tests.py"
 docker run --rm \
   -v "$VOLUME_MOUNT" \
+  --entrypoint python \
   "$IMAGE" \
+  "run_tests.py" \
   -t "$TASKS" \
   -c "$COMPLETIONS" \
   --tests "$TESTS_JSON" \

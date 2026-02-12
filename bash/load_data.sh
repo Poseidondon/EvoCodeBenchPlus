@@ -13,6 +13,7 @@ tar -xzf dataset/Source_Code.tar.gz -C dataset/
 mkdir -p dataset/repos
 mv dataset/Source_Code/* dataset/repos/
 rmdir dataset/Source_Code
+rm -f dataset/Source_Code.tar.gz
 
 # Verify extraction
 if [ "$(ls -A dataset/repos)" ]; then
