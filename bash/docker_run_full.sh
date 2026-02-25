@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e 
 
-IMAGE="${IMAGE:-evocodebench}"
-# Paths inside container (under /app). Mount host's experiments so these map to ./experiments locally.
+IMAGE="${IMAGE:-evocodebenchplus}"
+# Paths inside container (under /app)
 TASKS="${TASKS:-dataset/data/data-success.jsonl}"
 # local path to completions
 COMPLETIONS="${COMPLETIONS:-experiments/completions/oracle/oracle.jsonl}"
@@ -35,6 +35,7 @@ docker run --rm \
   --entrypoint python \
   "$IMAGE" \
   "run_tests.py" \
+  "-j 8" \
   -t "$TASKS" \
   -c "$COMPLETIONS" \
   --tests "$TESTS_JSON" \
