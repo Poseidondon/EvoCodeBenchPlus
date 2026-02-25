@@ -6,7 +6,6 @@ else
   echo "Creating virtual environment: $venv_path..."
   python -m venv $venv_path && source $venv_path/bin/activate
   cd $repos_dir/$repo_path || exit 1
-  pip install pytest pytest-runner
 
   if [ -f "setup.py" ]; then
     echo "Found setup.py — installing with setup.py..."
@@ -18,6 +17,8 @@ else
     echo "Error: Neither setup.py nor requirements.txt found."
     exit 1
   fi
+
+  pip install "pytest<9" pytest-runner
 
   deactivate
 fi
