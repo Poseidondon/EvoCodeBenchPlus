@@ -4,17 +4,16 @@ import os
 import argparse
 import shutil
 import json
+import multiprocessing
 
+from collections import defaultdict
 from pprint import pprint
-from typing import Mapping, Dict, Any, List
+from typing import Mapping, Dict, Any, List, Tuple, Optional
 from tqdm import tqdm
 from func_timeout import func_set_timeout, FunctionTimedOut
 
 from utils import load_tasks, load_completions, restore_script_backups, adjust_indent, parse_junitxml
 from exceptions import MissingRepoException, MissingVenvException, OutOfMemoryException
-
-# TODO: parallelism
-# TODO: test on oracle and nemesis
 
 
 def parse_args():
@@ -77,7 +76,46 @@ def parse_args():
         action='store_true',
         help='If true, assume that completion contains signature',
     )
+    parser.add_argument(
+        '-j', '--jobs',
+        type=int,
+        default=None,
+        help='Number of parallel workers (default: CPU count - 1, or 1 if single CPU). Use 1 for sequential.',
+    )
     return parser.parse_args()
+
+
+def _run_repo_tasks(
+    item: Tuple[
+        str,
+        str,
+        str,
+        List[Dict[str, Any]],
+        Dict[str, List[Dict[str, Any]]],
+        int,
+        bool,
+    ],
+) -> List[Tuple[str, Any, Optional[Exception]]]:
+    """Run all tasks for one repo. Returns list of (namespace, task_results, error)."""
+    repos_dir, venvs_dir, logs_dir, task_list, completions, max_tests, signature_completed = item
+    outcomes: List[Tuple[str, Any, Optional[Exception]]] = []
+    for task in task_list:
+        try:
+            task_results = run_gens_for_task(
+                repos_dir,
+                venvs_dir,
+                logs_dir,
+                task,
+                completions[task['namespace']],
+                max_tests=max_tests,
+                signature_completed=signature_completed,
+            )
+            outcomes.append((task['namespace'], task_results, None))
+        except MissingRepoException as e:
+            outcomes.append((task['namespace'], None, e))
+        except MissingVenvException as e:
+            outcomes.append((task['namespace'], None, e))
+    return outcomes
 
 
 @func_set_timeout(40)
@@ -271,9 +309,6 @@ def run_tests(
     os.makedirs(os.path.dirname(logs_dir), exist_ok=True)
     os.makedirs(os.path.dirname(results_path), exist_ok=True)
 
-    # TODO: number of threads
-    pass
-
     if restart or not os.path.exists(results_path):
         results = {}
     else:
@@ -284,42 +319,77 @@ def run_tests(
     if os.path.exists('.backups'):
         restore_script_backups(tasks, repos_dir)
 
+    tasks_to_run = [t for t in tasks if t['namespace'] not in results]
+    n_workers = njobs if njobs is not None else max(1, multiprocessing.cpu_count() - 1)
+    use_parallel = n_workers > 1 and len(tasks_to_run) > 0
+
     status = {
         'tests': 0,
         'skipped': 0,
         'errors': 0,
     }
+    if use_parallel:
+        status['skipped'] = len(tasks) - len(tasks_to_run)
+
     try:
-        p_bar = tqdm(tasks, total=len(tasks), desc='Testing repositories', disable=not pbar)
-        for task in p_bar:
-            p_bar.set_postfix(status)
-            status['tests'] += 1
-
-            # continue on saved result
-            if task['namespace'] in results:
-                print(f"Skipping {task['namespace']}.")
-                status['skipped'] += 1
-                continue
-
-            try:
-                task_results = run_gens_for_task(
-                    repos_dir,
-                    venvs_dir,
-                    logs_dir,
-                    task,
-                    completions[task['namespace']],
-                    max_tests=max_tests,
-                    signature_completed=signature_completed,
+        if use_parallel:
+            # Group tasks by repo so each worker only touches one repo (no file races)
+            tasks_by_repo: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+            for t in tasks_to_run:
+                tasks_by_repo[t['project_path']].append(t)
+            work_items = [
+                (repos_dir, venvs_dir, logs_dir, task_list, completions, max_tests, signature_completed)
+                for task_list in tasks_by_repo.values()
+            ]
+            with multiprocessing.Pool(processes=n_workers) as pool:
+                result_iter = pool.imap_unordered(_run_repo_tasks, work_items, chunksize=1)
+                p_bar = tqdm(
+                    result_iter,
+                    total=len(work_items),
+                    desc='Testing repositories',
+                    disable=not pbar,
+                    unit='repo',
                 )
-                results[task['namespace']] = task_results
-            except MissingRepoException as e:
-                print('WARNING: Missing repository!', e)
-                status['errors'] += 1
-            except MissingVenvException as e:
-                print('WARNING: Missing venv!', e)
-                status['errors'] += 1
-    
-    except KeyboardInterrupt as e:
+                for outcomes in p_bar:
+                    for namespace, task_results, err in outcomes:
+                        status['tests'] += 1
+                        if err is not None:
+                            status['errors'] += 1
+                            print(f'WARNING: {type(err).__name__}! {err}')
+                        else:
+                            results[namespace] = task_results
+                        p_bar.set_postfix(status)
+        else:
+            # Sequential
+            p_bar = tqdm(tasks, total=len(tasks), desc='Testing repositories', disable=not pbar)
+            for task in p_bar:
+                p_bar.set_postfix(status)
+                status['tests'] += 1
+
+                if task['namespace'] in results:
+                    print(f"Skipping {task['namespace']}.")
+                    status['skipped'] += 1
+                    continue
+
+                try:
+                    task_results = run_gens_for_task(
+                        repos_dir,
+                        venvs_dir,
+                        logs_dir,
+                        task,
+                        completions[task['namespace']],
+                        max_tests=max_tests,
+                        signature_completed=signature_completed,
+                    )
+                    results[task['namespace']] = task_results
+                except MissingRepoException as e:
+                    print('WARNING: Missing repository!', e)
+                    status['errors'] += 1
+                except MissingVenvException as e:
+                    print('WARNING: Missing venv!', e)
+                    status['errors'] += 1
+
+    except KeyboardInterrupt:
         print('KeyboardInterrupt detected!')
     finally:
         print('Restoring script backups...')
@@ -360,6 +430,7 @@ if __name__ == '__main__':
         logs_dir=args.logs,
         results_path=args.tests,
         restart=args.restart,
+        njobs=args.jobs,
         max_tests=args.max_tests,
         signature_completed=args.signature_completed,
     )
