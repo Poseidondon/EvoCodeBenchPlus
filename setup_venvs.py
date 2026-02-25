@@ -9,7 +9,8 @@ from pprint import pprint
 from tqdm import tqdm
 from typing import List, Dict, Set, Tuple
 
-from utils import load_tasks
+from utils import load_tasks, load_completions
+from run_tests import run_tests, task_passed
 
 
 def parse_args():
@@ -46,7 +47,30 @@ def parse_args():
         '--output',
         type=str,
         default='dataset/data/data-success.jsonl',
-        help='Path to write a file with only successful tasks.',
+        help='Path to write a file with only tasks that passed oracle tests.',
+    )
+    parser.add_argument(
+        '--oracle-logs',
+        type=str,
+        default='experiments/.logs/oracle-setup',
+        help='Directory for pytest logs during oracle run.',
+    )
+    parser.add_argument(
+        '--oracle-results',
+        type=str,
+        default='dataset/data/oracle-setup-results.json',
+        help='Path to store oracle test results (per-namespace).',
+    )
+    parser.add_argument(
+        '--oracle-completions',
+        type=str,
+        required=True,
+        help='Path to oracle completions JSONL.',
+    )
+    parser.add_argument(
+        '--no-oracle',
+        action='store_true',
+        help='Skip oracle test run: write all venv-success tasks to output (previous behavior).',
     )
 
     return parser.parse_args()
@@ -159,10 +183,53 @@ if __name__ == "__main__":
     success_projects = setup_venvs_for_tasks(tasks, env, script_path, jobs)
     success_tasks = [t for t in tasks if t["project_path"] in success_projects]
 
-    # save successful tasks
-    print(
-        f"Saving a total of {len(success_tasks)} tasks from {len(success_projects)} successful projects..."
-    )
+    if args.no_oracle:
+        # Previous behavior: save all tasks with successful venv setup
+        final_tasks = success_tasks
+        print(
+            f"Saving {len(final_tasks)} tasks (venv success only, oracle skipped)..."
+        )
+    else:
+        # Run oracle tests; only add to data-success if tests passed
+        repos_dir = env["repos_dir"]
+        venvs_dir = env["venv_dir"]
+        os.makedirs(os.path.dirname(args.oracle_logs) or ".", exist_ok=True)
+        os.makedirs(os.path.dirname(args.oracle_results) or ".", exist_ok=True)
+
+        if not os.path.isfile(args.oracle_completions):
+            raise FileNotFoundError(
+                f"Oracle completions file not found: {args.oracle_completions}"
+            )
+        print(f"Loading oracle completions from {args.oracle_completions}...")
+        completions = load_completions(args.oracle_completions)
+
+        print(f"Running oracle tests for {len(success_tasks)} tasks...")
+        run_tests(
+            success_tasks,
+            completions,
+            repos_dir=repos_dir,
+            venvs_dir=venvs_dir,
+            logs_dir=args.oracle_logs,
+            results_path=args.oracle_results,
+            restart=True,
+            njobs=jobs,
+            pbar=True,
+            max_tests=1,
+            signature_completed=False,
+        )
+
+        with open(args.oracle_results) as f:
+            results = json.load(f)
+        final_tasks = [
+            t for t in success_tasks
+            if task_passed(results.get(t["namespace"], []))
+        ]
+        failed_count = len(success_tasks) - len(final_tasks)
+        print(
+            f"Oracle passed: {len(final_tasks)} tasks, failed: {failed_count} (excluded from output)."
+        )
+
     with open(args.output, "w") as f:
-        for item in success_tasks:
+        for item in final_tasks:
             f.write(json.dumps(item) + "\n")
+    print(f"Wrote {len(final_tasks)} tasks to {args.output}.")

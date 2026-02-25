@@ -207,6 +207,24 @@ def run_tests_for_repo(
     return test_results
 
 
+def task_passed(task_results: List[List[Dict[str, Any]]]) -> bool:
+    """
+    Return True if the task passed: all runs have return_code 0 and no JUnit errors/failures.
+    task_results is the value stored per namespace: list of (list of run reports) per generation.
+    """
+    if not task_results:
+        return False
+    for gen_runs in task_results:
+        for run in gen_runs:
+            if run.get("return_code", 0) != 0:
+                return False
+            junit = run.get("junitxml")
+            if junit is not None:
+                if int(junit.get("errors", "0")) > 0 or int(junit.get("failures", "0")) > 0:
+                    return False
+    return True
+
+
 def run_gens_for_task(
         repos_dir: str | os.PathLike,
         venvs_dir: str | os.PathLike,
