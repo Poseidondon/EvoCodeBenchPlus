@@ -21,16 +21,28 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Dataset: task list + download and extract repos (large layer)
+# Dataset: task list, oracle completions (provided in repo), and download/extract repos
 COPY bash/ bash/
-COPY dataset/data/oracle.jsonl dataset/data/oracle.jsonl
-RUN bash bash/load_data.sh
+COPY dataset/data/oracle.jsonl dataset/data/
+RUN set -e && bash bash/load_data.sh && test -f dataset/data/oracle.jsonl && test -d dataset/repos && test -n "$(ls -A dataset/repos)"
 
-# App code and per-repo venvs
+# App code and venv setup (oracle completions already in dataset/data)
 RUN mkdir -p venvs
-COPY setup_venvs.py utils.py run_tests.py exceptions.py ./
-COPY evaluate/ evaluate/
+COPY setup_venvs.py run_tests.py utils.py exceptions.py ./
 COPY setup-venvs/ setup-venvs/
-RUN python setup_venvs.py
+
+# Run venv setup with oracle gate (only tasks that pass oracle go to data-success)
+RUN set -e \
+    && python setup_venvs.py \
+        -t dataset/data/oracle.jsonl \
+        -o dataset/data/data-success.jsonl \
+        --oracle-completions dataset/data/oracle.jsonl \
+        --repos dataset/repos \
+        --venvs venvs \
+        -j 8 \
+    && test -f dataset/data/data-success.jsonl \
+    && echo "Venv setup and oracle gate done. Tasks in data-success: $(wc -l < dataset/data/data-success.jsonl)"
+
+COPY evaluate/ evaluate/
 
 CMD ["/bin/bash"]

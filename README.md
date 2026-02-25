@@ -46,7 +46,7 @@ confirming the validity of the updated evaluation pipeline.
 Use a pre-built image; building locally is not recommended (venv/oracle setup can fail for some repos).  
 **TODO:** Pre-built container link: [TBD].
 
-Pull the image (once the link is set), then from the repo root:
+Pull the image, then from the repo root:
 
 ```bash
 IMAGE=evocodebench  # or your registry path

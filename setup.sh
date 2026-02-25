@@ -26,7 +26,7 @@ else
 fi
 
 if [ -f setup_venvs.py ]; then
-    python setup_venvs.py
+    python setup_venvs.py -j 8
 else
     echo "Error: setup_venvs.py not found" >&2
     exit 1
