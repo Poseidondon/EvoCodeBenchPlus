@@ -14,6 +14,7 @@ if [ -f bash/load_data.sh ]; then
 else
     echo "Error: load_data.sh not found"
     exit 1
+fi
 
 # Setup virtual environments
 echo "Setting up virtual environments..."
