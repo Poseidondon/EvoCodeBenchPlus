@@ -40,3 +40,23 @@ due to either missing dependencies or flawed test cases. To ensure the integrity
 the benchmark, we filtered out test cases that failed on oracle completions. After
 this curation step, we achieved the expected pass@1 = 1.0 for oracle completions -
 confirming the validity of the updated evaluation pipeline.
+
+## Docker
+
+Use a pre-built image; building locally is not recommended (venv/oracle setup can fail for some repos).  
+**TODO:** Pre-built container link: [TBD].
+
+Pull the image (once the link is set), then from the repo root:
+
+```bash
+IMAGE=evocodebench  # or your registry path
+bash bash/docker_run_full.sh
+```
+
+The script mounts `./experiments` into the container. It runs `run_tests.py` (tasks = `data-success.jsonl` in image, completions from `experiments/completions/oracle/oracle.jsonl`) then `evaluate/testing.py` for pass@k. Outputs: `experiments/tests/oracle-results.json`, `experiments/pass_at_k/oracle.json`, `experiments/.logs/`.
+
+Env overrides: `IMAGE`, `TASKS`, `COMPLETIONS`, `TESTS_JSON`, `LOGS_DIR`, `PASSATK_JSON`, `K_VALUES`. Extra args go to `run_tests.py`.
+
+```bash
+COMPLETIONS=experiments/completions/my_model.jsonl K_VALUES="1 5 10" bash bash/docker_run_full.sh
+```
