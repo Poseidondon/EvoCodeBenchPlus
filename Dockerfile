@@ -39,6 +39,7 @@ RUN set -e \
         --oracle-completions experiments/completions/oracle/oracle.jsonl \
         --repos dataset/repos \
         --venvs venvs \
+        --venv-setup-logs experiments/.logs/venv-setup \
         -j 8 \
     && test -f dataset/data/data-success.jsonl \
     && echo "Venv setup and oracle gate done. Tasks in data-success: $(wc -l < dataset/data/data-success.jsonl)"
@@ -58,6 +59,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libx11-dev \
     xorg-dev \
+    libyaml-dev \
     libglu1-mesa-dev \
     && rm -rf /var/lib/apt/lists/*
 
@@ -66,9 +68,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# From builder: only venvs and dataset/data (no dataset/repos)
+# From builder: venvs, dataset/data, and failed-venv setup logs
 COPY --from=builder /app/venvs ./venvs
 COPY --from=builder /app/dataset/data ./dataset/data
+COPY --from=builder /app/experiments/.logs/venv-setup ./experiments/.logs/venv-setup
 
 # App code (repos are mounted at /app/dataset/repos by docker_run_full.sh)
 COPY setup_venvs.py run_tests.py utils.py exceptions.py ./
