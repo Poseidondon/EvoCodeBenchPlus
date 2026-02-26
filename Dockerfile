@@ -2,7 +2,7 @@
 # -----------------------------------------------------------------------------
 # Stage 1: build venvs and data-success using downloaded repos (repos not in final image)
 # -----------------------------------------------------------------------------
-FROM python:3.11-bookworm AS builder
+FROM python:3.11-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONUNBUFFERED=1
@@ -43,36 +43,8 @@ RUN set -e \
     && test -f dataset/data/data-success.jsonl \
     && echo "Venv setup and oracle gate done. Tasks in data-success: $(wc -l < dataset/data/data-success.jsonl)"
 
-# -----------------------------------------------------------------------------
-# Stage 2: final image (venvs + dataset/data only; repos mounted at runtime)
-# -----------------------------------------------------------------------------
-FROM python:3.11-bookworm
 
-ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONUNBUFFERED=1
-ENV PIP_DISABLE_PIP_VERSION_CHECK=1
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    sudo \
-    wget \
-    build-essential \
-    libx11-dev \
-    xorg-dev \
-    libglu1-mesa-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# From builder: only venvs and dataset/data (no dataset/repos)
-COPY --from=builder /app/venvs ./venvs
-COPY --from=builder /app/dataset/data ./dataset/data
-
-# App code (repos are mounted at /app/dataset/repos by docker_run_full.sh)
-COPY setup_venvs.py run_tests.py utils.py exceptions.py ./
-COPY setup-venvs/ setup-venvs/
 COPY evaluate/ evaluate/
+
 
 CMD ["/bin/bash"]

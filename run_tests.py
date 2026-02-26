@@ -118,7 +118,7 @@ def _run_repo_tasks(
     return outcomes
 
 
-@func_set_timeout(40)
+@func_set_timeout(120)
 def run_test(
         repo_path: str | os.PathLike,
         venv_path: str | os.PathLike,
