@@ -7,76 +7,75 @@ codebase is largely compatible with DevEval, making it a suitable foundation for
 our enhancements. The majority of our development and validation efforts were
 carried out using the EvoCodeBench dataset, as described below.
 
-## Setup (run once)
+## Quick Start
 
-From the repo root, run:
+The recommended way to run evaluation is with Docker. The script uses the pre-built image [konstfed/evocodebenchplus](https://hub.docker.com/repository/docker/konstfed/evocodebenchplus/general) (pulled automatically) or your locally built image.
 
-```bash
-./setup.sh
-```
-
-This will:
-
-- Install Python dependencies (`pip install -r requirements.txt`)
-- Download and extract the dataset into `dataset/repos/` (via `bash/load_data.sh`)
-- Install system dependencies for headless testing (e.g. build-essential, xorg)
-
-## Evaluation
-
-After setup, you can run the benchmark either with Docker (recommended) or locally.
-
-### Option 1: Docker (recommended)
-
-**Pre-built image:** [konstfed/evocodebenchplus](https://hub.docker.com/repository/docker/konstfed/evocodebenchplus/general) on Docker Hub. The script uses this image by default (no build required).
-
-Pull and run the full pipeline (tests + pass@k). The script mounts your local `dataset/repos` and `experiments` into the container:
+**Run oracle evaluation (pass@1):**
 
 ```bash
 bash bash/docker_run_full.sh
 ```
 
-To build the image locally instead (venvs and curated task list are built inside the image; source repos are not stored in the image):
+Results appear under `experiments/`: test results in `experiments/tests/`, pass@k in `experiments/pass_at_k/`. Expect pass@1 = 1.0 for the oracle; if it drops (e.g. due to timeouts), lower parallelism by setting `-j` in the script (e.g. `-j 4`).
+
+**Run with your own completions:** set env vars before the script, then run it. Example:
 
 ```bash
-docker build -t evocodebenchplus .
-IMAGE=evocodebenchplus bash bash/docker_run_full.sh
+COMPLETIONS=experiments/completions/my_model.jsonl \
+TESTS_JSON=experiments/tests/my_model-results.json \
+PASSATK_JSON=experiments/pass_at_k/my_model.json \
+bash bash/docker_run_full.sh
 ```
 
-Defaults: tasks = `dataset/data/data-success.jsonl` (in image), completions = `experiments/completions/oracle/oracle.jsonl`. Outputs: `experiments/tests/oracle-results.json`, `experiments/pass_at_k/oracle.json`, `experiments/.logs/`.
+`COMPLETIONS` is input; `TESTS_JSON` and `PASSATK_JSON` are output paths (test results and pass@k metrics). Other options (`TASKS`, `LOGS_DIR`, `K_VALUES`, etc.) are in `bash/docker_run_full.sh`.
 
-Override env vars as needed, e.g.:
+---
+
+## Manual Setup
+
+From the repo root:
+
+**1. Install dependencies and load dataset**
 
 ```bash
-COMPLETIONS=experiments/completions/my_model.jsonl K_VALUES="1 5 10" bash bash/docker_run_full.sh
+pip install -r requirements.txt
+./setup.sh
 ```
 
-Env overrides: `IMAGE`, `TASKS`, `COMPLETIONS`, `TESTS_JSON`, `LOGS_DIR`, `PASSATK_JSON`, `K_VALUES`. Any extra arguments are passed to `run_tests.py`.
+**2. Build per-repo virtual environments**
 
-### Option 2: Local (manual)
+```bash
+python setup_venvs.py \
+  -t dataset/data/oracle.jsonl \
+  -o dataset/data/data-success.jsonl \
+  --oracle-completions experiments/completions/oracle/oracle.jsonl \
+  --repos dataset/repos \
+  --venvs venvs \
+  -j 8
+```
 
-1. **Venvs and curated tasks** (one-time, after `setup.sh`):
+**3. Run tests**
 
-   ```bash
-   python setup_venvs.py \
-     -t dataset/data/oracle.jsonl \
-     -o dataset/data/data-success.jsonl \
-     --oracle-completions experiments/completions/oracle/oracle.jsonl \
-     --repos dataset/repos \
-     --venvs venvs \
-     -j 8
-   ```
+```bash
+python run_tests.py \
+  -j 8 \
+  -t dataset/data/data-success.jsonl \
+  -c experiments/completions/oracle/oracle.jsonl \
+  --tests experiments/tests/oracle-results.json \
+  -l experiments/.logs
+```
 
-2. **Run tests** on your completions:
+**4. Compute pass@k**
 
-   ```bash
-   python run_tests.py -j 8 -t dataset/data/data-success.jsonl -c experiments/completions/oracle/oracle.jsonl --tests experiments/tests/oracle-results.json -l experiments/.logs
-   ```
+```bash
+python evaluate/testing.py \
+  --tests experiments/tests/oracle-results.json \
+  --output experiments/pass_at_k/oracle.json \
+  -k 1 5 10
+```
 
-3. **Compute pass@k**:
-
-   ```bash
-   python evaluate/testing.py --tests experiments/tests/oracle-results.json --output experiments/pass_at_k/oracle.json -k 1 5 10
-   ```
+For your own completions, point `-c` and `--tests`/`--output` to your completion file and desired output paths; keep `-t` and `--venvs` consistent with step 2.
 
 ---
 
