@@ -8,8 +8,8 @@ else
   cd $repos_dir/$repo_path || exit 1
 
   if [ -f "setup.py" ]; then
-    echo "Found setup.py — installing with pip..."
-    python -m pip install .
+    echo "Found setup.py"
+    python setup.py install
   elif [ -f "requirements.txt" ]; then
     echo "setup.py not found. Installing from requirements.txt..."
     pip install -r requirements.txt
