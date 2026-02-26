@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e 
 
-IMAGE="${IMAGE:-evocodebenchplus}"
+IMAGE="${IMAGE:-konstfed/evocodebenchplus}"
 # Paths inside container (under /app)
 TASKS="${TASKS:-dataset/data/data-success.jsonl}"
 # local path to completions

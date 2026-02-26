@@ -27,18 +27,19 @@ After setup, you can run the benchmark either with Docker (recommended) or local
 
 ### Option 1: Docker (recommended)
 
-**Pre-built image:** TODO: [Pre-built image link TBD]
+**Pre-built image:** [konstfed/evocodebenchplus](https://hub.docker.com/repository/docker/konstfed/evocodebenchplus/general) on Docker Hub. The script uses this image by default (no build required).
 
-Alternatively, build the image locally (venvs and curated task list are built inside the image; source repos are not stored in the image):
-
-```bash
-docker build -t evocodebenchplus .
-```
-
-Then run the full pipeline (tests + pass@k). The script mounts your local `dataset/repos` and `experiments` into the container:
+Pull and run the full pipeline (tests + pass@k). The script mounts your local `dataset/repos` and `experiments` into the container:
 
 ```bash
 bash bash/docker_run_full.sh
+```
+
+To build the image locally instead (venvs and curated task list are built inside the image; source repos are not stored in the image):
+
+```bash
+docker build -t evocodebenchplus .
+IMAGE=evocodebenchplus bash bash/docker_run_full.sh
 ```
 
 Defaults: tasks = `dataset/data/data-success.jsonl` (in image), completions = `experiments/completions/oracle/oracle.jsonl`. Outputs: `experiments/tests/oracle-results.json`, `experiments/pass_at_k/oracle.json`, `experiments/.logs/`.
@@ -46,7 +47,7 @@ Defaults: tasks = `dataset/data/data-success.jsonl` (in image), completions = `e
 Override env vars as needed, e.g.:
 
 ```bash
-IMAGE=evocodebenchplus COMPLETIONS=experiments/completions/my_model.jsonl K_VALUES="1 5 10" bash bash/docker_run_full.sh
+COMPLETIONS=experiments/completions/my_model.jsonl K_VALUES="1 5 10" bash bash/docker_run_full.sh
 ```
 
 Env overrides: `IMAGE`, `TASKS`, `COMPLETIONS`, `TESTS_JSON`, `LOGS_DIR`, `PASSATK_JSON`, `K_VALUES`. Any extra arguments are passed to `run_tests.py`.
