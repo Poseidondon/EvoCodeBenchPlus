@@ -72,20 +72,14 @@ def parse_args():
         action='store_true',
         help='Skip oracle test run: write all venv-success tasks to output (previous behavior).',
     )
-    parser.add_argument(
-        '--venv-setup-logs',
-        type=str,
-        default=None,
-        help='Directory to write stdout/stderr logs for failed venv setups (one file per failed project).',
-    )
 
     return parser.parse_args()
 
 
 # Top-level for pickling on spawn (Windows / some macOS)
-def _setup_one_project(item: Tuple[str, str, str, str, str | None]) -> Tuple[str, int]:
+def _setup_one_project(item: Tuple[str, str, str, str]) -> Tuple[str, int]:
     """Run venv setup for one project. Returns (project_path, returncode)."""
-    project_path, repos_dir, venv_dir, script_path, log_dir = item
+    project_path, repos_dir, venv_dir, script_path = item
     venv_path = os.path.join(venv_dir, project_path)
     if os.path.exists(venv_path):
         return (project_path, 0)
@@ -96,25 +90,12 @@ def _setup_one_project(item: Tuple[str, str, str, str, str | None]) -> Tuple[str
     env["repo_path"] = project_path
     env["PIP_DISABLE_PIP_VERSION_CHECK"] = "1"
     env["PYTHONWARNINGS"] = "ignore"
-    capture_output = log_dir is not None
     result = subprocess.run(
         ["bash", script_path],
         env=env,
-        stdout=subprocess.PIPE if capture_output else subprocess.DEVNULL,
-        stderr=subprocess.STDOUT if capture_output else subprocess.DEVNULL,
-        text=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
     )
-    if capture_output and result.returncode != 0 and result.stdout:
-        safe_name = project_path.replace("/", "_").replace("\\", "_")
-        log_path = os.path.join(log_dir, f"{safe_name}.log")
-        try:
-            with open(log_path, "w") as f:
-                f.write(f"# project_path: {project_path}\n")
-                f.write(f"# returncode: {result.returncode}\n")
-                f.write("-" * 80 + "\n")
-                f.write(result.stdout)
-        except OSError:
-            pass
     return (project_path, result.returncode)
 
 
@@ -124,16 +105,12 @@ def setup_venvs_for_tasks(
     script_path: str,
     jobs: int,
     pbar: bool = False,
-    venv_setup_logs_dir: str | None = None,
 ) -> Set[str]:
     projects = sorted({t["project_path"] for t in tasks})
     print(f"Installing venvs for {len(projects)} projects (jobs={jobs}).")
-    if venv_setup_logs_dir:
-        os.makedirs(venv_setup_logs_dir, exist_ok=True)
-        print(f"Failed venv logs will be written to: {os.path.abspath(venv_setup_logs_dir)}")
 
     work_items = [
-        (project_path, env["repos_dir"], env["venv_dir"], script_path, venv_setup_logs_dir)
+        (project_path, env["repos_dir"], env["venv_dir"], script_path)
         for project_path in projects
     ]
 
@@ -171,8 +148,6 @@ def setup_venvs_for_tasks(
             venv_path = os.path.join(env["venv_dir"], p)
             if os.path.exists(venv_path):
                 shutil.rmtree(venv_path)
-        if error_cnt and venv_setup_logs_dir:
-            print(f"Failed venv logs written to: {os.path.abspath(venv_setup_logs_dir)} ({error_cnt} files)")
 
     return success_projects
 
@@ -205,9 +180,7 @@ if __name__ == "__main__":
         n = max(1, multiprocessing.cpu_count() - 1)
         jobs = n
 
-    success_projects = setup_venvs_for_tasks(
-        tasks, env, script_path, jobs, venv_setup_logs_dir=args.venv_setup_logs
-    )
+    success_projects = setup_venvs_for_tasks(tasks, env, script_path, jobs)
     success_tasks = [t for t in tasks if t["project_path"] in success_projects]
 
     if args.no_oracle:
